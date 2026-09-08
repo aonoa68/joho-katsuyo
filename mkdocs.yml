@@ -1,0 +1,77 @@
+site_name: 情報活用
+site_description: 北星学園大学「情報活用／情報活用Ⅰ」2026年度後期 授業資料
+site_author: 小野原 彩香
+site_url: https://aonoa68.github.io/joho-katsuyo/
+
+theme:
+  name: material
+  language: ja
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: ダークモードに切り替え
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: ライトモードに切り替え
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - ja
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - ホーム: index.md
+  - 授業の基本:
+      - 授業のルール: rules.md
+      - この授業で使う道具: tools.md
+      - AIとの付き合い方: ai.md
+  - 各回の資料:
+      - 第1回 ガイダンスと調査の企画(1): week01.md
+      - 第2回 調査の企画(2)：対象・方法・研究倫理: week02.md
+      - 第3回 調査票の設計(1)：設問とデータの種類: week03.md
+      - 第4回 調査票の設計(2)：分布と代表値＋環境の準備: week04.md
+      - 第5回 調査の実施: week05.md
+      - 第6回 CSVを読み込む・整形・記述統計: week06.md
+      - 第7回 データの整理と比較：クロス集計: week07.md
+      - 第8回 データの加工：並べ替え・ランキング: week08.md
+      - 第9回 データの表現：グラフ・散布図: week09.md
+      - 第10回 成果物ページの構成（HTML）: week10.md
+      - 第11回 ページの仕上げと公開: week11.md
+      - 第12回 プレゼンテーションの実施: week12.md
+      - 第13回 報告書の作成: week13.md
+      - 第14回 総復習・まとめ: week14.md
+
+copyright: © 2026 小野原 彩香 — 北星学園大学 情報活用
