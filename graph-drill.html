@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>グラフ選択ドリル</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .container { max-width: 700px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: 4px; color: #1a1a2e; }
+  .subtitle { font-size: 0.85rem; color: #666; margin-bottom: 20px; }
+  .section-badge {
+    display: inline-block;
+    background: #e8ecff;
+    color: #4361ee;
+    font-size: 0.75rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  .progress-bar { background: #ddd; border-radius: 4px; height: 6px; margin-bottom: 20px; overflow: hidden; }
+  .progress-fill { background: #4361ee; height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+
+  .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 16px; }
+  .question-num { font-size: 0.75rem; color: #888; margin-bottom: 8px; letter-spacing: 0.05em; }
+  .question-text { font-size: 1.05rem; line-height: 1.7; margin-bottom: 16px; }
+  .scenario { background: #f0f4ff; border-left: 3px solid #4361ee; padding: 10px 14px; border-radius: 0 6px 6px 0; margin-bottom: 18px; font-size: 0.93rem; line-height: 1.6; }
+
+  /* Choice (棒グラフ/ヒストグラム) */
+  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .choice-btn {
+    border: 2px solid #ddd; background: #fff; border-radius: 8px;
+    padding: 16px 10px; font-size: 0.95rem; cursor: pointer;
+    transition: all 0.15s; text-align: center; font-family: inherit;
+  }
+  .choice-btn:hover:not(:disabled) { border-color: #4361ee; background: #f0f4ff; }
+  .choice-btn.correct { border-color: #2dc653; background: #e8faf0; color: #1a7a3a; font-weight: bold; }
+  .choice-btn.wrong   { border-color: #e74c3c; background: #fdf0ef; color: #c0392b; }
+  .choice-btn.show-correct { border-color: #2dc653; background: #e8faf0; color: #1a7a3a; font-weight: bold; }
+
+  /* Judge (グラフA vs B) */
+  .charts-row { display: flex; gap: 16px; justify-content: center; margin: 14px 0 16px; flex-wrap: wrap; }
+  .chart-box {
+    flex: 0 0 auto;
+    border: 2px solid #ddd; border-radius: 8px; padding: 8px 8px 4px;
+    text-align: center; transition: border-color 0.2s;
+    cursor: default;
+  }
+  .chart-box .chart-id {
+    font-size: 0.8rem; color: #666; font-weight: bold; margin-bottom: 4px;
+  }
+  .chart-box svg { display: block; }
+  .chart-box.correct { border-color: #2dc653; background: #f0fff4; }
+  .chart-box.wrong   { border-color: #e74c3c; background: #fff5f5; }
+  .judge-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .judge-btn {
+    border: 2px solid #ddd; background: #fff; border-radius: 8px;
+    padding: 13px 10px; font-size: 0.9rem; cursor: pointer;
+    transition: all 0.15s; font-family: inherit;
+  }
+  .judge-btn:hover:not(:disabled) { border-color: #4361ee; background: #f0f4ff; }
+  .judge-btn.correct { border-color: #2dc653; background: #e8faf0; color: #1a7a3a; font-weight: bold; }
+  .judge-btn.wrong   { border-color: #e74c3c; background: #fdf0ef; color: #c0392b; }
+  .judge-btn.show-correct { border-color: #2dc653; background: #e8faf0; color: #1a7a3a; font-weight: bold; }
+  .ng-label {
+    display: inline-block; background: #e74c3c; color: #fff;
+    font-size: 0.7rem; padding: 1px 6px; border-radius: 3px; margin-left: 4px; font-weight: bold;
+  }
+  .ok-label {
+    display: inline-block; background: #2dc653; color: #fff;
+    font-size: 0.7rem; padding: 1px 6px; border-radius: 3px; margin-left: 4px; font-weight: bold;
+  }
+
+  /* Feedback */
+  .feedback { margin-top: 14px; padding: 12px 14px; border-radius: 8px; font-size: 0.9rem; line-height: 1.6; display: none; }
+  .feedback.correct { background: #e8faf0; border: 1px solid #2dc653; color: #1a5c30; }
+  .feedback.wrong   { background: #fdf0ef; border: 1px solid #e74c3c; color: #7b1a1a; }
+  .feedback .rule { margin-top: 6px; font-size: 0.85rem; color: #555; }
+
+  .nav-row { display: flex; justify-content: flex-end; margin-top: 14px; }
+  .next-btn { background: #4361ee; color: #fff; border: none; border-radius: 8px; padding: 11px 26px; font-size: 0.95rem; cursor: pointer; font-family: inherit; display: none; }
+  .next-btn:hover { background: #2c47cc; }
+
+  .hint { font-size: 0.78rem; color: #888; margin-top: 12px; }
+
+  /* Result */
+  .result-screen { display: none; text-align: center; padding: 36px 16px; }
+  .score-big { font-size: 3.5rem; font-weight: bold; color: #4361ee; }
+  .score-label { font-size: 1rem; color: #666; margin-bottom: 20px; }
+  .score-comment { font-size: 0.97rem; margin-bottom: 26px; line-height: 1.7; color: #333; }
+  .retry-btn { background: #4361ee; color: #fff; border: none; border-radius: 8px; padding: 13px 34px; font-size: 0.95rem; cursor: pointer; font-family: inherit; }
+  .retry-btn:hover { background: #2c47cc; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>グラフ選択ドリル</h1>
+  <p class="subtitle">パート1: 棒グラフ か ヒストグラム か　／　パート2: どちらのグラフが正しいか（NG判定）</p>
+
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill" style="width:0%"></div>
+  </div>
+
+  <div class="card" id="quizCard">
+    <div class="question-num" id="questionNum"></div>
+    <div class="section-badge" id="sectionBadge"></div>
+    <div class="question-text" id="questionText"></div>
+    <div class="scenario" id="scenarioText"></div>
+    <div id="choiceArea"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="nav-row">
+      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">次の問題 →</button>
+    </div>
+  </div>
+
+  <div class="hint" id="hintText"></div>
+
+  <div class="card result-screen" id="resultScreen">
+    <div class="score-big" id="scoreBig"></div>
+    <div class="score-label" id="scoreLabel"></div>
+    <div class="score-comment" id="scoreComment"></div>
+    <button class="retry-btn" onclick="restart()">もう一度やる</button>
+  </div>
+</div>
+
+<script>
+// ─── SVG bar chart generator ────────────────────────────────────────────────
+function barChart(cfg) {
+  const {
+    title = '', yMin = 0, yMax = 8, values = [], labels = [],
+    gapped = true, yAxisLabel = '', w = 155, h = 125
+  } = cfg;
+
+  const pT = title ? 26 : 10;
+  const pL = yAxisLabel ? 36 : 30;
+  const pR = 8;
+  const pB = 28;
+  const cX = pL, cY = pT, cW = w - pL - pR, cH = h - pT - pB, cB = cY + cH;
+  const yRange = yMax - yMin;
+  const n = values.length;
+
+  const barW = gapped ? Math.floor(cW * 0.27) : Math.floor(cW / n);
+  const gapW = gapped ? Math.floor(cW * 0.13) : 0;
+  const totalBW = n * barW + (n - 1) * gapW;
+  const sx = cX + (cW - totalBW) / 2;
+
+  const bX  = i => sx + i * (barW + gapW);
+  const bHt = v => Math.max(1, ((v - yMin) / yRange) * cH);
+  const bY  = v => cB - bHt(v);
+
+  const ff = "Hiragino Kaku Gothic ProN,Meiryo,sans-serif";
+  let s = `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">`;
+  s += `<rect width="${w}" height="${h}" fill="#f8f9fa" rx="6" stroke="#e0e0e0" stroke-width="0.5"/>`;
+
+  if (title) {
+    s += `<text x="${w/2}" y="17" text-anchor="middle" font-size="8" fill="#222" font-weight="bold" font-family="${ff}">${title}</text>`;
+  }
+
+  // Axes
+  s += `<line x1="${cX}" y1="${cY}" x2="${cX}" y2="${cB}" stroke="#888" stroke-width="1"/>`;
+  s += `<line x1="${cX}" y1="${cB}" x2="${cX+cW}" y2="${cB}" stroke="#888" stroke-width="1"/>`;
+
+  // Y ticks
+  const nT = 4;
+  for (let i = 0; i <= nT; i++) {
+    const val = yMin + yRange * i / nT;
+    const y   = cB - cH * i / nT;
+    s += `<line x1="${cX}" y1="${y}" x2="${cX+cW}" y2="${y}" stroke="#e0e0e0" stroke-width="0.5"/>`;
+    s += `<line x1="${cX-3}" y1="${y}" x2="${cX}" y2="${y}" stroke="#888" stroke-width="1"/>`;
+    const lbl = Number.isInteger(val) ? val : val.toFixed(2).replace(/\.?0+$/, '');
+    s += `<text x="${cX-4}" y="${y+3}" text-anchor="end" font-size="7" fill="#666" font-family="sans-serif">${lbl}</text>`;
+  }
+
+  // Y axis label (rotated)
+  if (yAxisLabel) {
+    const lx = 9, ly = cY + cH / 2;
+    s += `<text transform="rotate(-90,${lx},${ly})" x="${lx}" y="${ly+3}" text-anchor="middle" font-size="7" fill="#555" font-family="${ff}">${yAxisLabel}</text>`;
+  }
+
+  // Bars
+  const colors = ['#4361ee', '#e85d4a'];
+  values.forEach((v, i) => {
+    const x = bX(i), bh = bHt(v), by = bY(v), cx = x + barW / 2;
+    s += `<rect x="${x}" y="${by}" width="${barW}" height="${bh}" fill="${colors[i%colors.length]}" rx="2"/>`;
+    s += `<text x="${cx}" y="${cB+14}" text-anchor="middle" font-size="8" fill="#444" font-family="${ff}">${labels[i]||''}</text>`;
+    if (bh > 12) {
+      s += `<text x="${cx}" y="${by-3}" text-anchor="middle" font-size="7" fill="#333" font-family="sans-serif">${v}</text>`;
+    }
+  });
+
+  s += `</svg>`;
+  return s;
+}
+
+// ─── Line chart generator ────────────────────────────────────────────────────
+function lineChart({title='', yMin=4, yMax=10, values=[], w=155, h=125}) {
+  const pT=title?26:10, pL=30, pR=8, pB=26;
+  const cX=pL, cY=pT, cW=w-pL-pR, cH=h-pT-pB, cB=cY+cH;
+  const yRange=yMax-yMin, n=values.length;
+  const xStep=n>1?cW/(n-1):0;
+  const px=i=>cX+i*xStep;
+  const py=v=>cB-((v-yMin)/yRange)*cH;
+  const ff="Hiragino Kaku Gothic ProN,Meiryo,sans-serif";
+  let s=`<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">`;
+  s+=`<rect width="${w}" height="${h}" fill="#f8f9fa" rx="6" stroke="#e0e0e0" stroke-width="0.5"/>`;
+  if(title) s+=`<text x="${w/2}" y="17" text-anchor="middle" font-size="8" fill="#222" font-weight="bold" font-family="${ff}">${title}</text>`;
+  s+=`<line x1="${cX}" y1="${cY}" x2="${cX}" y2="${cB}" stroke="#888" stroke-width="1"/>`;
+  s+=`<line x1="${cX}" y1="${cB}" x2="${cX+cW}" y2="${cB}" stroke="#888" stroke-width="1"/>`;
+  for(let i=0;i<=4;i++){
+    const val=yMin+yRange*i/4, y=cB-cH*i/4;
+    s+=`<line x1="${cX}" y1="${y}" x2="${cX+cW}" y2="${y}" stroke="#e0e0e0" stroke-width="0.5"/>`;
+    s+=`<line x1="${cX-3}" y1="${y}" x2="${cX}" y2="${y}" stroke="#888" stroke-width="1"/>`;
+    s+=`<text x="${cX-4}" y="${y+3}" text-anchor="end" font-size="7" fill="#666" font-family="sans-serif">${Number.isInteger(val)?val:val.toFixed(1)}</text>`;
+  }
+  const pts=values.map((v,i)=>`${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+  s+=`<polyline points="${pts}" fill="none" stroke="#e74c3c" stroke-width="1.8" stroke-linejoin="round"/>`;
+  values.forEach((v,i)=>{s+=`<circle cx="${px(i).toFixed(1)}" cy="${py(v).toFixed(1)}" r="3" fill="#e74c3c"/>`;});
+  values.forEach((_,i)=>{
+    if(n<=8||i%3===0||i===n-1){
+      s+=`<text x="${px(i).toFixed(1)}" y="${cB+11}" text-anchor="middle" font-size="6" fill="#666" font-family="sans-serif">${String(i+1).padStart(2,'0')}</text>`;
+    }
+  });
+  s+=`<text x="${cX+cW/2}" y="${h-3}" text-anchor="middle" font-size="6.5" fill="#888" font-family="${ff}">回答ID</text>`;
+  s+=`</svg>`;
+  return s;
+}
+
+// ─── Pie chart generator ─────────────────────────────────────────────────────
+function pieChart({title='', slices=[], w=155, h=125}) {
+  const pT=title?26:10;
+  const cx=w/2, cy=pT+(h-pT-16)/2, r=Math.min((w-32)/2,(h-pT-16)/2);
+  const ff="Hiragino Kaku Gothic ProN,Meiryo,sans-serif";
+  let s=`<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">`;
+  s+=`<rect width="${w}" height="${h}" fill="#f8f9fa" rx="6" stroke="#e0e0e0" stroke-width="0.5"/>`;
+  if(title) s+=`<text x="${w/2}" y="17" text-anchor="middle" font-size="8" fill="#222" font-weight="bold" font-family="${ff}">${title}</text>`;
+  const total=slices.reduce((a,sl)=>a+sl.value,0);
+  let ang=-Math.PI/2;
+  slices.forEach(sl=>{
+    const sweep=(sl.value/total)*2*Math.PI, ea=ang+sweep;
+    const x1=(cx+r*Math.cos(ang)).toFixed(1), y1=(cy+r*Math.sin(ang)).toFixed(1);
+    const x2=(cx+r*Math.cos(ea)).toFixed(1),  y2=(cy+r*Math.sin(ea)).toFixed(1);
+    const large=sweep>Math.PI?1:0;
+    s+=`<path d="M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2} Z" fill="${sl.color}" stroke="#fff" stroke-width="1.5"/>`;
+    const ma=ang+sweep/2;
+    const lx=(cx+r*0.62*Math.cos(ma)).toFixed(1), ly=(cy+r*0.62*Math.sin(ma)).toFixed(1);
+    s+=`<text x="${lx}" y="${(parseFloat(ly)-4).toFixed(1)}" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold" font-family="${ff}">${sl.label}</text>`;
+    s+=`<text x="${lx}" y="${(parseFloat(ly)+7).toFixed(1)}" text-anchor="middle" font-size="8" fill="#fff" font-family="sans-serif">${((sl.value/total)*100).toFixed(0)}%</text>`;
+    ang=ea;
+  });
+  s+=`</svg>`;
+  return s;
+}
+
+// ─── 3D bar chart generator ──────────────────────────────────────────────────
+function barChart3D({title='', yMin=0, yMax=8, values=[], labels=[], w=155, h=125}) {
+  const pT=title?26:10, pL=30, pR=24, pB=28;
+  const cX=pL, cY=pT, cW=w-pL-pR, cH=h-pT-pB, cB=cY+cH;
+  const yRange=yMax-yMin, n=values.length;
+  const dx=11, dy=-8; // 3D depth offset
+
+  const barW=Math.floor(cW*0.26);
+  const gapW=Math.floor(cW*0.12);
+  const totalBW=n*barW+(n-1)*gapW;
+  const sx=cX+(cW-totalBW)/2;
+  const bX=i=>sx+i*(barW+gapW);
+  const bHt=v=>Math.max(1,((v-yMin)/yRange)*cH);
+  const bY=v=>cB-bHt(v);
+
+  const ff="Hiragino Kaku Gothic ProN,Meiryo,sans-serif";
+  let s=`<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg">`;
+  s+=`<rect width="${w}" height="${h}" fill="#f0f0f8" rx="6" stroke="#e0e0e0" stroke-width="0.5"/>`;
+  if(title) s+=`<text x="${w/2}" y="17" text-anchor="middle" font-size="8" fill="#222" font-weight="bold" font-family="${ff}">${title}</text>`;
+
+  // Back wall (for 3D feel)
+  s+=`<polygon points="${cX},${cY} ${cX+dx},${cY+dy} ${cX+cW+dx},${cY+dy} ${cX+cW},${cY}" fill="#e4e8f8"/>`;
+  s+=`<polygon points="${cX},${cY} ${cX+dx},${cY+dy} ${cX+dx},${cB+dy} ${cX},${cB}" fill="#d8ddf0"/>`;
+
+  // Ground line
+  s+=`<line x1="${cX}" y1="${cB}" x2="${cX+cW+dx}" y2="${cB+dy}" stroke="#888" stroke-width="1"/>`;
+  // Y axis
+  s+=`<line x1="${cX}" y1="${cY}" x2="${cX}" y2="${cB}" stroke="#888" stroke-width="1"/>`;
+
+  // Y ticks
+  for(let i=0;i<=4;i++){
+    const val=yMin+yRange*i/4, y=cB-cH*i/4;
+    s+=`<line x1="${cX-3}" y1="${y}" x2="${cX}" y2="${y}" stroke="#888" stroke-width="1"/>`;
+    s+=`<text x="${cX-4}" y="${y+3}" text-anchor="end" font-size="7" fill="#666" font-family="sans-serif">${Number.isInteger(val)?val:val.toFixed(1)}</text>`;
+  }
+
+  const fc=['#4361ee','#e85d4a'], rc=['#243480','#8a2818'], tc=['#7a93ff','#f48070'];
+  values.forEach((v,i)=>{
+    const x=bX(i), bh=bHt(v), by=bY(v), x2=x+barW, cx=x+barW/2;
+    // right face
+    s+=`<polygon points="${x2},${by} ${x2+dx},${by+dy} ${x2+dx},${cB+dy} ${x2},${cB}" fill="${rc[i%rc.length]}"/>`;
+    // top face
+    s+=`<polygon points="${x},${by} ${x2},${by} ${x2+dx},${by+dy} ${x+dx},${by+dy}" fill="${tc[i%tc.length]}"/>`;
+    // front face
+    s+=`<rect x="${x}" y="${by}" width="${barW}" height="${bh}" fill="${fc[i%fc.length]}"/>`;
+    s+=`<text x="${cx}" y="${cB+14}" text-anchor="middle" font-size="8" fill="#444" font-family="${ff}">${labels[i]||''}</text>`;
+    if(bh>14) s+=`<text x="${cx}" y="${by-3}" text-anchor="middle" font-size="7" fill="#333" font-family="sans-serif">${v}</text>`;
+  });
+
+  s+=`</svg>`;
+  return s;
+}
+
+// ─── Questions ───────────────────────────────────────────────────────────────
+
+// Part 1: Choose 棒グラフ or ヒストグラム
+const choiceQuestions = [
+  {
+    type: 'choice', answer: 'bar',
+    scenario: "朝食を食べる人と食べない人で、平均睡眠時間がどれだけ違うかを見たい。",
+    reason: "「朝食あり」「朝食なし」という2つのグループを比べるので棒グラフ。X軸はカテゴリ名。"
+  },
+  {
+    type: 'choice', answer: 'hist',
+    scenario: "クラス全員の睡眠時間が、5時間台・6時間台・7時間台のどこに集まっているかを見たい。",
+    reason: "数値の「分布」を見るのでヒストグラム。X軸は数値の区間（5時間台、6時間台…）。棒の間に隙間はない。"
+  },
+  {
+    type: 'choice', answer: 'bar',
+    scenario: "経済D・英文・社会の3クラスの平均点を比べたい。",
+    reason: "「経済D」「英文」「社会」というカテゴリを比較するので棒グラフ。"
+  },
+  {
+    type: 'choice', answer: 'hist',
+    scenario: "100人のテストの点数が、何点台に何人いるかを可視化したい。",
+    reason: "点数の分布を見るのでヒストグラム。区間（0〜10点、11〜20点…）で人数を見る。"
+  },
+  {
+    type: 'choice', answer: 'bar',
+    scenario: "男女別の平均身長を比べたい。",
+    reason: "「男性」「女性」というカテゴリの比較なので棒グラフ。"
+  },
+  {
+    type: 'choice', answer: 'hist',
+    scenario: "アンケートで集めた「一日のスマホ使用時間」が0〜1時間・1〜2時間・2〜3時間…のどこに多いかを見たい。",
+    reason: "連続した数値の分布を見るのでヒストグラム。使用時間という数値を区間に分けている。"
+  },
+  {
+    type: 'choice', answer: 'bar',
+    scenario: "Excelを使える人・使えない人・少し使える人の人数を棒で表したい。",
+    reason: "「使える」「使えない」「少し使える」はカテゴリなので棒グラフ。数値の連続性がないため隙間あり。"
+  },
+  {
+    type: 'choice', answer: 'hist',
+    scenario: "60人分の通学時間（分）のデータが、短い人・長い人にどう分布しているかを確認したい。",
+    reason: "通学時間という連続した数値の分布を見るのでヒストグラム。「10〜20分」「20〜30分」のような区間になる。"
+  },
+  {
+    type: 'choice', answer: 'bar',
+    scenario: "月別の欠席者数を比べたい（4月・5月・6月・7月）。",
+    reason: "「4月」「5月」「6月」「7月」というカテゴリを比較するので棒グラフ。"
+  },
+  {
+    type: 'choice', answer: 'hist',
+    scenario: "学生のアルバイト時給が、800円台・900円台・1000円台・1100円台にどう分布しているかを見たい。",
+    reason: "時給という数値の分布を区間で見るのでヒストグラム。X軸は「800〜899円」「900〜999円」のような区間。"
+  }
+];
+
+// Part 2: Which chart is correct?
+const judgeQuestions = [
+  {
+    type: 'judge',
+    questionText: '同じデータで2つの棒グラフを作りました。どちらが正確にデータを伝えていますか？',
+    scenario: "朝食の有無と平均睡眠時間（朝食あり: 6.8時間、朝食なし: 6.1時間）",
+    answer: 'right',
+    ngPoint: 'Y軸が0から始まっていない',
+    reason: 'グラフAのY軸は6.0〜7.0で0から始まっていません。わずかな差（0.7時間）が非常に大きく見えてしまいます。Y軸は原則として0から始めることで、差の大きさを正確に伝えられます。',
+    leftCfg:  { title:'', yMin:6.0, yMax:7.0, values:[6.8, 6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'（時間）' },
+    rightCfg: { title:'', yMin:0,   yMax:8.0, values:[6.8, 6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'（時間）' }
+  },
+  {
+    type: 'judge',
+    questionText: 'レポートに貼るグラフとして、どちらが適切ですか？',
+    scenario: "朝食の有無と平均睡眠時間を比較した棒グラフ",
+    answer: 'right',
+    ngPoint: 'タイトルがない',
+    reason: 'グラフAにはタイトルがありません。グラフ単体を見たとき、何のデータかわかりません。タイトルは必須です。',
+    leftCfg:  { title:'',                       yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'（時間）' },
+    rightCfg: { title:'朝食と平均睡眠時間',         yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'（時間）' }
+  },
+  {
+    type: 'judge',
+    questionText: '「朝食あり・朝食なし」の平均睡眠時間を棒グラフで表しました。どちらの形が正しいですか？',
+    scenario: "カテゴリを比較する棒グラフ（棒グラフ vs ヒストグラムのように見えるもの）",
+    answer: 'right',
+    ngPoint: '棒の間に隙間がない（ヒストグラムの形になっている）',
+    reason: 'グラフAは棒の間に隙間がありません。これはヒストグラムの形です。「朝食あり・朝食なし」はカテゴリデータなので、棒グラフには隙間が必要です。',
+    leftCfg:  { title:'平均睡眠時間', yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:false, yAxisLabel:'（時間）' },
+    rightCfg: { title:'平均睡眠時間', yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:true,  yAxisLabel:'（時間）' }
+  },
+  {
+    type: 'judge',
+    questionText: '2つのグラフを比べてください。情報が揃っているのはどちらですか？',
+    scenario: "朝食の有無と平均睡眠時間の棒グラフ（片方のY軸に単位あり・なし）",
+    answer: 'left',
+    ngPoint: 'Y軸のラベル（単位）がない',
+    reason: 'グラフBにはY軸のラベルがなく、数字の意味（何の単位か）がわかりません。「時間」「点」「円」など単位を示す軸ラベルは必須です。',
+    leftCfg:  { title:'平均睡眠時間', yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'（時間）' },
+    rightCfg: { title:'平均睡眠時間', yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'' }
+  },
+  {
+    type: 'judge',
+    questionText: '15人の睡眠時間を「回答ID順」にグラフにしました。どちらが適切ですか？',
+    scenario: "回答者15人分の睡眠時間（時間）のデータ（個人を識別するIDはランダムに振られた番号）",
+    answer: 'right',
+    ngPoint: '無関係な個人データを折れ線グラフで結んでいる',
+    reason: '折れ線グラフは「時間の流れによる変化（例：月別気温）」を表すものです。回答01さんと02さんは全くの別人なので、線で結んでも「上がった・下がった」という意味はありません。分布を見るにはヒストグラム、グループ比較には棒グラフを使いましょう。',
+    leftSvg: lineChart({title:'睡眠時間（回答ID順・折れ線）', yMin:4, yMax:10, values:[6.5,8.0,5.5,7.5,6.0,8.5,5.0,7.0,8.0,5.5,6.5,7.5,6.0,9.0,5.5]}),
+    rightSvg: barChart({title:'グループ別平均睡眠時間', yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'（時間）'})
+  },
+  {
+    type: 'judge',
+    questionText: '「朝食あり・なし別の平均睡眠時間」を表したグラフです。どちらが適切ですか？',
+    scenario: "朝食あり: 平均6.8時間、朝食なし: 平均6.1時間（各グループの平均値）",
+    answer: 'right',
+    ngPoint: '平均値を円グラフで表している',
+    reason: '円グラフは「全体を100%としたときの割合（内訳）」を表すものです。平均値を足しても「全体の何か」にはならないため、このグラフは意味をなしません。平均値の大きさを比較するには棒グラフを使います。',
+    leftSvg: pieChart({title:'睡眠時間（平均）の円グラフ', slices:[{label:'朝食あり',value:6.8,color:'#4361ee'},{label:'朝食なし',value:6.1,color:'#e85d4a'}]}),
+    rightSvg: barChart({title:'グループ別平均睡眠時間', yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'（時間）'})
+  },
+  {
+    type: 'judge',
+    questionText: '同じデータの棒グラフです。どちらが値を正確に読み取れますか？',
+    scenario: "朝食の有無と平均睡眠時間（朝食あり: 6.8時間、朝食なし: 6.1時間）",
+    answer: 'right',
+    ngPoint: '3Dグラフは値が正確に読み取れない',
+    reason: '3Dグラフは見た目は派手ですが、奥行き（遠近法）の影響でY軸の目盛りが正確に読めなくなります。「手前の棒が大きく見える」「奥の棒が隠れる」などの問題が生じます。レポートや分析では、シンプルな2D棒グラフを使いましょう。',
+    leftSvg:  barChart3D({title:'3D棒グラフ（NG）', yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし']}),
+    rightSvg: barChart({title:'2D棒グラフ（OK）', yMin:0, yMax:8, values:[6.8,6.1], labels:['朝食あり','朝食なし'], gapped:true, yAxisLabel:'（時間）'})
+  }
+];
+
+// Precompute SVGs for judge questions (skip if already set e.g. lineChart/pieChart)
+judgeQuestions.forEach(q => {
+  if (!q.leftSvg)  q.leftSvg  = barChart(q.leftCfg);
+  if (!q.rightSvg) q.rightSvg = barChart(q.rightCfg);
+});
+
+const allQuestions = [...choiceQuestions, ...judgeQuestions];
+
+// ─── State ───────────────────────────────────────────────────────────────────
+let order = [], current = 0, score = 0, answered = false;
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// Shuffle within each part, then concatenate so Part1 always comes before Part2
+function buildOrder() {
+  const p1 = shuffle([...Array(choiceQuestions.length).keys()]);
+  const p2 = shuffle([...Array(judgeQuestions.length).keys()].map(i => i + choiceQuestions.length));
+  return [...p1, ...p2];
+}
+
+// ─── Render ──────────────────────────────────────────────────────────────────
+function showQuestion() {
+  answered = false;
+  const total = allQuestions.length;
+  const q = allQuestions[order[current]];
+  const isJudge = q.type === 'judge';
+
+  document.getElementById('progressFill').style.width = `${(current / total) * 100}%`;
+  document.getElementById('questionNum').textContent = `問 ${current + 1} / ${total}`;
+  document.getElementById('sectionBadge').textContent = isJudge ? 'パート2: どちらが正しい？' : 'パート1: どのグラフ？';
+  document.getElementById('questionText').textContent = isJudge ? q.questionText : 'このデータを可視化するには？';
+  document.getElementById('scenarioText').textContent = q.scenario;
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+  document.getElementById('hintText').textContent = isJudge
+    ? 'ヒント：タイトル・Y軸の始点・棒の隙間・軸ラベル・グラフの種類（折れ線・円グラフの誤用）に注目。'
+    : 'ヒント：X軸が「名前（カテゴリ）」なら棒グラフ。X軸が「数値の区間」ならヒストグラム。';
+
+  if (isJudge) {
+    renderJudge(q);
+  } else {
+    renderChoice(q);
+  }
+}
+
+function renderChoice(q) {
+  document.getElementById('choiceArea').innerHTML = `
+    <div class="choices">
+      <button class="choice-btn" id="btn-bar" onclick="answerChoice('bar')">
+        📊 棒グラフ<br><small style="color:#888;font-size:0.75rem">グループを比べる</small>
+      </button>
+      <button class="choice-btn" id="btn-hist" onclick="answerChoice('hist')">
+        📈 ヒストグラム<br><small style="color:#888;font-size:0.75rem">分布を見る</small>
+      </button>
+    </div>`;
+}
+
+function renderJudge(q) {
+  document.getElementById('choiceArea').innerHTML = `
+    <div class="charts-row">
+      <div class="chart-box" id="chart-left">
+        <div class="chart-id">A</div>
+        ${q.leftSvg}
+      </div>
+      <div class="chart-box" id="chart-right">
+        <div class="chart-id">B</div>
+        ${q.rightSvg}
+      </div>
+    </div>
+    <div class="judge-btns">
+      <button class="judge-btn" id="jbtn-left"  onclick="answerJudge('left')">← A が正しい</button>
+      <button class="judge-btn" id="jbtn-right" onclick="answerJudge('right')">B が正しい →</button>
+    </div>`;
+}
+
+// ─── Answer handlers ─────────────────────────────────────────────────────────
+function answerChoice(choice) {
+  if (answered) return;
+  answered = true;
+  const q = allQuestions[order[current]];
+  const ok = choice === q.answer;
+  if (ok) score++;
+
+  const btnBar  = document.getElementById('btn-bar');
+  const btnHist = document.getElementById('btn-hist');
+  btnBar.disabled = btnHist.disabled = true;
+
+  if (choice === 'bar')  btnBar.className  = 'choice-btn ' + (ok ? 'correct' : 'wrong');
+  else                   btnHist.className = 'choice-btn ' + (ok ? 'correct' : 'wrong');
+  if (!ok) {
+    (q.answer === 'bar' ? btnBar : btnHist).className = 'choice-btn show-correct';
+  }
+  showFeedback(ok, q.reason);
+}
+
+function answerJudge(side) {
+  if (answered) return;
+  answered = true;
+  const q = allQuestions[order[current]];
+  const ok = side === q.answer;
+  if (ok) score++;
+
+  const jL = document.getElementById('jbtn-left');
+  const jR = document.getElementById('jbtn-right');
+  jL.disabled = jR.disabled = true;
+
+  // Button styling
+  if (side === 'left')  jL.className = 'judge-btn ' + (ok ? 'correct' : 'wrong');
+  else                  jR.className = 'judge-btn ' + (ok ? 'correct' : 'wrong');
+  if (!ok) {
+    (q.answer === 'left' ? jL : jR).className = 'judge-btn show-correct';
+  }
+
+  // Chart box highlighting
+  const ngSide = q.answer === 'left' ? 'right' : 'left';
+  const okSide = q.answer;
+  document.getElementById('chart-' + okSide).className = 'chart-box correct';
+  document.getElementById('chart-' + ngSide).className = 'chart-box wrong';
+
+  // Add NG/OK labels to chart IDs
+  document.querySelector('#chart-' + ngSide + ' .chart-id').innerHTML =
+    (ngSide === 'left' ? 'A' : 'B') + ' <span class="ng-label">NG</span>';
+  document.querySelector('#chart-' + okSide + ' .chart-id').innerHTML =
+    (okSide === 'left' ? 'A' : 'B') + ' <span class="ok-label">OK</span>';
+
+  const msg = ok ? '' : `NGポイント：<strong>${q.ngPoint}</strong><br>`;
+  showFeedback(ok, msg + q.reason);
+}
+
+function showFeedback(ok, text) {
+  const fb = document.getElementById('feedback');
+  fb.className = 'feedback ' + (ok ? 'correct' : 'wrong');
+  fb.innerHTML = (ok ? '✅ 正解！' : '❌ 不正解') + `<div class="rule">${text}</div>`;
+  fb.style.display = 'block';
+  document.getElementById('nextBtn').style.display = 'block';
+  document.getElementById('nextBtn').textContent =
+    current + 1 < allQuestions.length ? '次の問題 →' : '結果を見る';
+}
+
+// ─── Navigation ──────────────────────────────────────────────────────────────
+function nextQuestion() {
+  current++;
+  if (current >= allQuestions.length) showResult();
+  else showQuestion();
+}
+
+function showResult() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('hintText').style.display = 'none';
+  document.getElementById('progressFill').style.width = '100%';
+  const rs = document.getElementById('resultScreen');
+  rs.style.display = 'block';
+  const total = allQuestions.length;
+  document.getElementById('scoreBig').textContent = `${score} / ${total}`;
+  document.getElementById('scoreLabel').textContent = '正解数';
+  const pct = score / total;
+  let comment = '';
+  if (pct >= 0.9) comment = '完璧！グラフの選択・判定どちらも理解できています。';
+  else if (pct >= 0.7) comment = 'よくできました。パート2（グラフ判定）のNG基準を授業資料で確認してみましょう。';
+  else if (pct >= 0.5) comment = '半分正解。棒グラフ/ヒストグラムの違いと、Y軸・タイトル・隙間のルールをもう一度確認してください。';
+  else comment = '「棒グラフ＝比べる・ヒストグラム＝ばらつきを見る」「Y軸は0から・タイトル必須・単位必須」を確認してからもう一度挑戦してみましょう。';
+  document.getElementById('scoreComment').textContent = comment;
+}
+
+function restart() {
+  current = 0; score = 0;
+  order = buildOrder();
+  document.getElementById('quizCard').style.display = 'block';
+  document.getElementById('resultScreen').style.display = 'none';
+  document.getElementById('hintText').style.display = 'block';
+  showQuestion();
+}
+
+// ─── Start ───────────────────────────────────────────────────────────────────
+order = buildOrder();
+showQuestion();
+</script>
+</body>
+</html>
