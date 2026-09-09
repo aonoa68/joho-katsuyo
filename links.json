@@ -1,0 +1,20 @@
+{
+  "_comment": "各回のリンク。値を入れると各週ページの「今日のリンク」欄に反映される（build_links.py）。空文字は『準備中』と表示される。moodle_base はコースIDが決まったら埋める。",
+  "moodle_course": {"gC": "", "sB": ""},
+  "weeks": {
+    "1":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "2":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "3":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "4":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "5":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "6":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "7":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "8":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "9":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "10": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "11": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "12": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "13": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
+    "14": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""}
+  }
+}

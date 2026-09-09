@@ -11,6 +11,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+echo "▶ 0/3 各回の「今日のリンク」を links.json から生成"
+python3 build_links.py
+
 echo "▶ 1/3 整合チェック（ナビ・トップ一覧・実ファイル）"
 if ! python3 check_consistency.py; then
   echo ""
