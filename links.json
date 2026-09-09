@@ -79,8 +79,8 @@
       "ai": "",
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989701",
       "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989714",
-      "quiz_gC": "",
-      "quiz_sB": ""
+      "quiz_gC": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990130",
+      "quiz_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990135"
     },
     "8": {
       "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/08_sorting_ranking.ipynb",
@@ -90,8 +90,8 @@
       "ai": "",
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989702",
       "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989715",
-      "quiz_gC": "",
-      "quiz_sB": ""
+      "quiz_gC": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990142",
+      "quiz_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990136"
     },
     "9": {
       "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/09_visualization.ipynb",
@@ -101,8 +101,8 @@
       "ai": "",
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989703",
       "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989716",
-      "quiz_gC": "",
-      "quiz_sB": ""
+      "quiz_gC": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990132",
+      "quiz_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990137"
     },
     "10": {
       "notebook": "",
@@ -112,8 +112,8 @@
       "ai": "",
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989704",
       "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989717",
-      "quiz_gC": "",
-      "quiz_sB": ""
+      "quiz_gC": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990133",
+      "quiz_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990139"
     },
     "11": {
       "notebook": "",
@@ -123,8 +123,8 @@
       "ai": "",
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989705",
       "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989718",
-      "quiz_gC": "",
-      "quiz_sB": ""
+      "quiz_gC": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990134",
+      "quiz_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990140"
     },
     "12": {
       "notebook": "",

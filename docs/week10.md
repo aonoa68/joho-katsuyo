@@ -6,6 +6,8 @@
 !!! info "今日のリンク"
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989704)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989717)
+    - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990133)
+    - [✅ ふりかえりテスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990139)
 <!-- LINKS:END -->
 
 ## この回の問い

@@ -9,6 +9,8 @@
     - [🎯 ドリル](graph-drill.html)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989703)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989716)
+    - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990132)
+    - [✅ ふりかえりテスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990137)
 <!-- LINKS:END -->
 
 ## この回の問い

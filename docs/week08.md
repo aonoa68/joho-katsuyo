@@ -8,6 +8,8 @@
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates.csv)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989702)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989715)
+    - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990142)
+    - [✅ ふりかえりテスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990136)
 <!-- LINKS:END -->
 
 ## この回の問い
