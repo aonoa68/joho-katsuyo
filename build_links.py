@@ -17,11 +17,13 @@ DOCS = HERE / "docs"
 CFG = json.loads((HERE / "links.json").read_text(encoding="utf-8"))
 
 LABELS = [
-    ("submit",   "📝 課題を提出する（Moodle）"),
-    ("quiz",     "✅ ふりかえりテスト（Moodle）"),
-    ("notebook", "📓 ノートブックを開く（Colab）"),
-    ("data",     "📊 配布データ（CSV）"),
-    ("ai",       "🤖 今日使うAI"),
+    ("submit_gC", "📝 課題を提出する（木3・グC）"),
+    ("submit_sB", "📝 課題を提出する（金3・社B）"),
+    ("quiz_gC",   "✅ ふりかえりテスト（木3・グC）"),
+    ("quiz_sB",   "✅ ふりかえりテスト（金3・社B）"),
+    ("notebook",  "📓 ノートブックを開く（Colab）"),
+    ("data",      "📊 配布データ（CSV）"),
+    ("ai",        "🤖 今日使うAI"),
 ]
 
 def block(week: str) -> str:
@@ -31,7 +33,7 @@ def block(week: str) -> str:
         url = (w.get(key) or "").strip()
         if url:
             rows.append(f"- [{label}]({url})")
-        elif key in ("submit",):          # 提出先は毎回あるので、無ければ準備中と出す
+        elif key in ("submit_gC", "submit_sB") and week != "14":
             rows.append(f"- {label} … 準備中")
     if not rows:
         return ""

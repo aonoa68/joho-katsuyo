@@ -4,7 +4,9 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
-    - 📝 課題を提出する（Moodle） … 準備中
+    - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989700)
+    - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989713)
+    - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/06_data_cleaning.ipynb)
 <!-- LINKS:END -->
 
 ## この回の問い

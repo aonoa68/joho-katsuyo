@@ -1,20 +1,135 @@
 {
-  "_comment": "各回のリンク。値を入れると各週ページの「今日のリンク」欄に反映される（build_links.py）。空文字は『準備中』と表示される。moodle_base はコースIDが決まったら埋める。",
-  "moodle_course": {"gC": "", "sB": ""},
+  "_comment": "各回のリンク。値を入れると各週ページの「今日のリンク」に反映される（build_links.py が生成、publish.sh が自動実行）。submit_/quiz_ はクラス別（gC=木3, sB=金3）。空文字は表示されない。",
+  "moodle_course": {
+    "gC": "https://moodle.hokusei.ac.jp/course/view.php?id=25509",
+    "sB": "https://moodle.hokusei.ac.jp/course/view.php?id=25502"
+  },
   "weeks": {
-    "1":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "2":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "3":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "4":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "5":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "6":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "7":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "8":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "9":  {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "10": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "11": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "12": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "13": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""},
-    "14": {"submit": "", "quiz": "", "notebook": "", "data": "", "ai": ""}
+    "1": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989695",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989708",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "2": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989696",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989709",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "3": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989697",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989710",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "4": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989698",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989711",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "5": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989699",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989712",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "6": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989700",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989713",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/06_data_cleaning.ipynb",
+      "data": "",
+      "ai": ""
+    },
+    "7": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989701",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989714",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/07_crosstab.ipynb",
+      "data": "",
+      "ai": ""
+    },
+    "8": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989702",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989715",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/08_sorting_ranking.ipynb",
+      "data": "",
+      "ai": ""
+    },
+    "9": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989703",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989716",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/09_visualization.ipynb",
+      "data": "",
+      "ai": ""
+    },
+    "10": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989704",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989717",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "11": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989705",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989718",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "12": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989706",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989719",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "13": {
+      "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989707",
+      "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989720",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    },
+    "14": {
+      "submit_gC": "",
+      "submit_sB": "",
+      "quiz_gC": "",
+      "quiz_sB": "",
+      "notebook": "",
+      "data": "",
+      "ai": ""
+    }
   }
 }

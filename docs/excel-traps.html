@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excelは嘘をつく — 見た目と中身の罠</title>
+<style>
+  :root{
+    --green:#217346; --green-light:#e6f2ec; --green-dark:#185c38;
+    --red:#d13438; --red-light:#fde7e7; --gray:#f3f3f3;
+    --text:#222; --muted:#666; --border:#ddd; --accent:#3949ab;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Hiragino Sans",sans-serif; color:var(--text);
+       background:#f7f8fa; line-height:1.7; padding:0 16px 80px;}
+  .wrap{max-width:760px; margin:0 auto;}
+  header{text-align:center; padding:32px 0 8px;}
+  header h1{font-size:1.6rem; color:var(--green-dark);}
+  header p{color:var(--muted); font-size:.95rem; margin-top:6px;}
+  .lead{background:var(--green-light); border-left:4px solid var(--green);
+        border-radius:8px; padding:14px 18px; margin:18px 0; font-size:.95rem;}
+  .card{background:#fff; border:1px solid var(--border); border-radius:12px;
+        padding:22px; margin:20px 0; box-shadow:0 1px 4px rgba(0,0,0,.05);}
+  .card h2{font-size:1.15rem; color:var(--green-dark); margin-bottom:4px;}
+  .card .tag{display:inline-block; background:var(--red-light); color:var(--red);
+        font-size:.72rem; font-weight:bold; padding:2px 8px; border-radius:999px; margin-bottom:10px;}
+  .demo{background:var(--gray); border-radius:10px; padding:18px; margin:14px 0; text-align:center;}
+  /* 疑似スプレッドシート */
+  .sheet{display:inline-block; border-collapse:collapse; background:#fff;
+         border:1px solid #bbb; font-variant-numeric:tabular-nums;}
+  .sheet .colh,.sheet .rowh{background:#f0f0f0; color:#888; font-size:.72rem;
+         text-align:center; border:1px solid #ccc; padding:2px 6px; font-weight:normal;}
+  .cell{border:1px solid #ccc; padding:4px 6px; height:30px; text-align:right;
+        overflow:hidden; white-space:nowrap; font-size:.95rem; vertical-align:middle;}
+  .cell.deceive{color:#000; font-weight:600;}
+  .truth{margin-top:12px; font-size:.9rem;}
+  .truth b{color:var(--green-dark);}
+  .lie{color:var(--red); font-weight:bold;}
+  input[type=range]{width:220px; vertical-align:middle;}
+  input[type=text]{padding:8px 10px; font-size:1rem; border:1px solid #bbb; border-radius:6px; width:160px; text-align:right;}
+  button{background:var(--accent); color:#fff; border:0; border-radius:7px;
+         padding:8px 16px; font-size:.92rem; cursor:pointer; margin:4px;}
+  button:hover{background:#2c3a90;}
+  button.alt{background:#fff; color:var(--accent); border:1px solid var(--accent);}
+  .why{font-size:.9rem; color:var(--muted); margin-top:12px;}
+  .lesson{background:#fff8e1; border-left:4px solid #ffc107; border-radius:8px;
+          padding:10px 14px; margin-top:12px; font-size:.9rem;}
+  .reveal{display:none; margin-top:10px;}
+  .reveal.show{display:block;}
+  footer{text-align:center; color:var(--muted); font-size:.82rem; margin-top:32px; padding-top:18px; border-top:1px solid var(--border);}
+  .ctrl{margin:10px 0; font-size:.9rem; color:var(--muted);}
+  code{background:rgba(0,0,0,.06); padding:1px 5px; border-radius:4px; font-family:monospace;}
+  .nav{text-align:center; margin:20px 0;}
+  .nav a{color:var(--accent); margin:0 10px; font-size:.9rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>📵 Excelは、ときどき嘘をつく</h1>
+  <p>セルに表示されている数字は、本当に「中に入っている値」とは限りません。</p>
+</header>
+
+<div class="lead">
+  この授業で何度か出てくる考え方——<b>「中身（データ）と見た目（表示）は別物」</b>。<br>
+  Excelはそれを一番身近に体験させてくれます。下のカードを<b>実際に触って</b>、
+  「見た目が変わっても中身は変わらない」を確かめてください。
+</div>
+
+<!-- 1. セル幅の罠 -->
+<div class="card">
+  <span class="tag">罠① セル幅</span>
+  <h2>0.9 が「1」に化ける</h2>
+  <p style="font-size:.92rem;color:var(--muted)">列を狭めると、Excelは無理やり丸めて表示します。でも中身は変わりません。</p>
+  <div class="demo">
+    <table class="sheet">
+      <tr><td class="colh"></td><td class="colh">A</td></tr>
+      <tr><td class="rowh">1</td><td class="cell deceive" id="w-cell" style="width:90px">0.9</td></tr>
+    </table>
+    <div class="ctrl">列の幅：<input type="range" id="w-slider" min="26" max="110" value="90"> <span id="w-px">90px</span></div>
+    <div class="truth">
+      画面の表示：<span class="lie" id="w-shown">0.9</span>　／
+      <b>セルの本当の値：0.9</b>
+    </div>
+    <button onclick="proveWidth()">証拠：<code>=A1*10</code> を計算してみる</button>
+    <div class="reveal" id="w-proof">
+      <b><code>=A1*10</code> の結果：<span id="w-mult" class="lie">9</span></b><br>
+      見た目が「1」でも、10倍すると <b>9</b>。だから本当は <b>0.9</b> です。
+      <span style="color:var(--muted)">（もし本当に1なら10になるはず）</span>
+    </div>
+  </div>
+  <div class="lesson">💡 <b>教訓：</b>見た目の桁数で判断しない。グラフや集計に使われるのは「中身の値」。
+    列が狭いだけで「1」と読み取ると、データを読み違えます。</div>
+</div>
+
+<!-- 2. ##### -->
+<div class="card">
+  <span class="tag">罠② #####</span>
+  <h2><code>#####</code> は「エラー」ではない</h2>
+  <p style="font-size:.92rem;color:var(--muted)">数字が列に収まらないと、Excelは <code>#####</code> と出します。値が消えたわけではありません。</p>
+  <div class="demo">
+    <table class="sheet">
+      <tr><td class="colh"></td><td class="colh">A</td></tr>
+      <tr><td class="rowh">1</td><td class="cell deceive" id="h-cell" style="width:50px">#####</td></tr>
+    </table>
+    <div class="ctrl">列の幅：<input type="range" id="h-slider" min="40" max="160" value="50"> <span id="h-px">50px</span></div>
+    <div class="truth"><b>セルの本当の値：1234567</b>（広げれば見えます）</div>
+  </div>
+  <div class="lesson">💡 <b>教訓：</b><code>#####</code> を見て「壊れた」と思わない。列を広げる（またはダブルクリックで自動調整）だけ。</div>
+</div>
+
+<!-- 3. 浮動小数点 -->
+<div class="card">
+  <span class="tag">罠③ 小数の誤差</span>
+  <h2><code>0.1 + 0.2</code> は <code>0.3</code> ではない</h2>
+  <p style="font-size:.92rem;color:var(--muted)">コンピュータは一部の小数を正確に持てません。Excelは見た目をごまかして 0.3 と表示します。</p>
+  <div class="demo">
+    <table class="sheet">
+      <tr><td class="colh"></td><td class="colh">A</td></tr>
+      <tr><td class="rowh">1</td><td class="cell deceive">=0.1+0.2</td></tr>
+      <tr><td class="rowh">2</td><td class="cell deceive" id="f-cell">0.3</td></tr>
+    </table>
+    <div class="ctrl">A2 の表示：<span class="lie">0.3</span></div>
+    <button onclick="document.getElementById('f-proof').classList.add('show')">本当の値を見る（小数を増やす）</button>
+    <div class="reveal" id="f-proof">
+      <b>本当の計算結果：<span class="lie">0.30000000000000004</span></b><br>
+      ぴったり 0.3 ではありません。<code>IF(A2=0.3, "同じ", "違う")</code> が<b>「違う」</b>になることも。
+    </div>
+  </div>
+  <div class="lesson">💡 <b>教訓：</b>お金や厳密な比較では、<code>ROUND()</code> で丸めてから比べる。「=で一致するはず」が裏切られる。</div>
+</div>
+
+<!-- 4. 先頭ゼロ -->
+<div class="card">
+  <span class="tag">罠④ 先頭ゼロ</span>
+  <h2><code>0123</code> が <code>123</code> になる</h2>
+  <p style="font-size:.92rem;color:var(--muted)">Excelは「数値」とみなすと、頭のゼロを捨てます。学籍番号・電話番号・郵便番号の事故の定番です。</p>
+  <div class="demo">
+    <input type="text" id="z-input" value="0123">
+    <button onclick="zNum()">数値として入力</button>
+    <button class="alt" onclick="zStr()">文字列として入力（先頭に <code>'</code>）</button>
+    <div class="truth" style="margin-top:14px">
+      <table class="sheet">
+        <tr><td class="colh"></td><td class="colh">A</td></tr>
+        <tr><td class="rowh">1</td><td class="cell deceive" id="z-cell">0123</td></tr>
+      </table>
+      <div class="ctrl" id="z-note" style="margin-top:8px"></div>
+    </div>
+  </div>
+  <div class="lesson">💡 <b>教訓：</b>ゼロで始まる「番号」は、Excelでは数値でなく<b>文字列</b>として扱う
+    （セル書式を「文字列」に／先頭に <code>'</code>）。これは <b>26H + 7桁</b> の学籍番号にも関わります。</div>
+</div>
+
+<!-- 5. 日付自動変換 -->
+<div class="card">
+  <span class="tag">罠⑤ 勝手に日付</span>
+  <h2><code>1-3</code> や <code>2/5</code> が日付に化ける</h2>
+  <p style="font-size:.92rem;color:var(--muted)">Excelは「日付っぽい」入力を勝手に日付へ変換します。止められません。</p>
+  <div class="demo">
+    <input type="text" id="d-input" value="1-3" style="width:120px">
+    <button onclick="dConv()">そのまま入力</button>
+    <div class="truth" style="margin-top:14px">
+      <table class="sheet">
+        <tr><td class="colh"></td><td class="colh">A</td></tr>
+        <tr><td class="rowh">1</td><td class="cell deceive" id="d-cell">1月3日</td></tr>
+      </table>
+      <div class="ctrl" id="d-note" style="margin-top:8px">入力した <code>1-3</code> が、日付に変わりました。</div>
+    </div>
+  </div>
+  <div class="lesson">💡 <b>教訓：</b>遺伝子名 <code>MARCH1</code> が日付化して論文データが壊れた有名事故があります
+    （科学者が遺伝子名を改名したほど）。「1-3」「2/5」「SEP2」等は要注意。文字列指定で防ぐ。</div>
+</div>
+
+<!-- 6. 指数表記 -->
+<div class="card">
+  <span class="tag">罠⑥ 桁が多すぎ</span>
+  <h2>長い数字が <code>1.23E+15</code> になり、しかも壊れる</h2>
+  <p style="font-size:.92rem;color:var(--muted)">16桁を超える数字（クレジットカード番号など）は、表示が指数になるだけでなく、末尾が <b>0 に化けます</b>。</p>
+  <div class="demo">
+    <table class="sheet">
+      <tr><td class="colh"></td><td class="colh">A</td></tr>
+      <tr><td class="rowh">1</td><td class="cell deceive">1234567890123456</td></tr>
+    </table>
+    <button onclick="document.getElementById('e-proof').classList.add('show')">Excelでどうなるか見る</button>
+    <div class="reveal" id="e-proof">
+      表示：<span class="lie">1.23457E+15</span>　／
+      実際に保存される値：<span class="lie">1234567890123450</span>
+      <span style="color:var(--muted)">（末尾の 6 が 0 に！）</span><br>
+      Excelの数値は約15桁までしか正確に持てません。
+    </div>
+  </div>
+  <div class="lesson">💡 <b>教訓：</b>長い「番号」は計算しないので、最初から<b>文字列</b>で扱う。数値にした瞬間、末尾が静かに壊れます。</div>
+</div>
+
+<div class="card" style="background:var(--green-light); border-color:var(--green)">
+  <h2 style="color:var(--green-dark)">まとめ：見た目を信じず、中身を確かめる</h2>
+  <p style="font-size:.95rem; margin-top:6px">
+    6つの罠に共通するのは、<b>「画面の表示」と「セルに入っている本当の値」がズレる</b>こと。<br>
+    これは Excel が下手なのではなく、<b>データと見た目を1つに固めている</b>道具の宿命です。<br>
+    データを扱うとき、そして AI にデータを渡すときも——
+    <b>「見えている数字＝本当の値」とは限らない</b>と疑える人が、間違えません。
+  </p>
+</div>
+
+<div class="nav">
+  <a href="index.html">← 概念ドリル</a>
+  <a href="practice.html">実技ドリル →</a>
+</div>
+
+<footer>
+  情報入門 ／「Excelは嘘をつく」見た目と中身の罠<br>
+  本教材は教員（小野原）が生成AI「Claude」と協働で作成しました（2026年）。
+</footer>
+</div>
+
+<script>
+// 1. セル幅
+const wSlider=document.getElementById('w-slider'), wCell=document.getElementById('w-cell'),
+      wPx=document.getElementById('w-px'), wShown=document.getElementById('w-shown');
+function renderWidth(){
+  const px=+wSlider.value;
+  wCell.style.width=px+'px'; wPx.textContent=px+'px';
+  // 幅が狭いほど丸める：56px以上=0.9、それ未満=1
+  const shown = px>=56 ? '0.9' : '1';
+  wCell.textContent=shown; wShown.textContent=shown;
+}
+wSlider.addEventListener('input', renderWidth); renderWidth();
+function proveWidth(){
+  document.getElementById('w-proof').classList.add('show');
+  document.getElementById('w-mult').textContent='9';
+}
+
+// 2. #####
+const hSlider=document.getElementById('h-slider'), hCell=document.getElementById('h-cell'), hPx=document.getElementById('h-px');
+function renderHash(){
+  const px=+hSlider.value; hCell.style.width=px+'px'; hPx.textContent=px+'px';
+  hCell.textContent = px>=92 ? '1234567' : '#####';
+}
+hSlider.addEventListener('input', renderHash); renderHash();
+
+// 4. 先頭ゼロ
+function zNum(){
+  const v=document.getElementById('z-input').value;
+  const n=String(parseInt(v,10)); // 先頭ゼロが落ちる
+  document.getElementById('z-cell').textContent=n;
+  document.getElementById('z-cell').style.textAlign='right';
+  document.getElementById('z-note').innerHTML='数値とみなされ、先頭の <code>0</code> が<b>消えました</b>（'+v+' → '+n+'）。';
+}
+function zStr(){
+  const v=document.getElementById('z-input').value;
+  document.getElementById('z-cell').textContent=v;
+  document.getElementById('z-cell').style.textAlign='left';
+  document.getElementById('z-note').innerHTML='文字列なので、<b>そのまま保たれます</b>（左寄せ＝文字列のサイン）。';
+}
+
+// 5. 日付
+function dConv(){
+  const v=document.getElementById('d-input').value.trim();
+  let out=v, msg='これは日付に見えないので、そのままです。';
+  const m=v.match(/^(\d{1,2})[-\/](\d{1,2})$/);
+  if(m){ out=parseInt(m[1],10)+'月'+parseInt(m[2],10)+'日';
+         msg='入力した <code>'+v+'</code> が、勝手に<b>日付</b>に変わりました。'; }
+  document.getElementById('d-cell').textContent=out;
+  document.getElementById('d-cell').style.textAlign='right';
+  document.getElementById('d-note').innerHTML=msg;
+}
+</script>
+</body>
+</html>

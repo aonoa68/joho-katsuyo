@@ -4,7 +4,8 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
-    - 📝 課題を提出する（Moodle） … 準備中
+    - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989696)
+    - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989709)
 <!-- LINKS:END -->
 
 ## この回の問い
