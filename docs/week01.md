@@ -6,6 +6,8 @@
 !!! info "今日のリンク"
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989695)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989708)
+    - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=989740)
+    - [✅ ふりかえりテスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=989747)
 <!-- LINKS:END -->
 
 ## この回の問い
@@ -14,7 +16,9 @@
 
 ## やること
 
+- **はじめの問い**（4分。「今日のリンク」のふりかえりテストから答えます）
 - この授業の進め方・評価（**定期試験はありません**）
+- **なぜOffice を使わないのか**（ベンダー依存の話）
 - 完成イメージを見る
 - 学内AIの紹介とログイン確認
 - データの見方（平均だけでは分からない）

@@ -8,8 +8,8 @@
     "1": {
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989695",
       "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989708",
-      "quiz_gC": "",
-      "quiz_sB": "",
+      "quiz_gC": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=989740",
+      "quiz_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=989747",
       "notebook": "",
       "data": "",
       "ai": ""
