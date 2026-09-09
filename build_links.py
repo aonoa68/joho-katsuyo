@@ -17,13 +17,17 @@ DOCS = HERE / "docs"
 CFG = json.loads((HERE / "links.json").read_text(encoding="utf-8"))
 
 LABELS = [
+    # ── 授業サイト側（できるだけこちらに集約する）──
+    ("notebook",  "📓 ノートブックを開く（Colab）"),
+    ("data",      "📊 練習用データの説明"),
+    ("material",  "📄 今日の資料"),
+    ("drill",     "🎯 ドリル"),
+    ("ai",        "🤖 今日使うAI"),
+    # ── Moodle側（提出と測定だけ。資料は置かない）──
     ("submit_gC", "📝 課題を提出する（木3・グC）"),
     ("submit_sB", "📝 課題を提出する（金3・社B）"),
     ("quiz_gC",   "✅ ふりかえりテスト（木3・グC）"),
     ("quiz_sB",   "✅ ふりかえりテスト（金3・社B）"),
-    ("notebook",  "📓 ノートブックを開く（Colab）"),
-    ("data",      "📊 配布データ（CSV）"),
-    ("ai",        "🤖 今日使うAI"),
 ]
 
 def block(week: str) -> str:

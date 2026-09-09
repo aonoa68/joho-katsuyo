@@ -56,10 +56,15 @@ nav:
   - ホーム: index.md
   - 授業の基本:
       - 授業のルール: rules.md
+      - 課題一覧と配点: assignments.md
       - この授業で使う道具: tools.md
       - AIとの付き合い方: ai.md
       - 情報をどこから得るか: sources.md
       - 教科書で学びたい人へ: textbook.md
+      - 配布データ（霊長類376種ほか）: dataset.md
+  - ドリル:
+      - グラフ選択ドリル: graph-drill.html
+      - Excelの落とし穴: excel-traps.html
   - 各回の資料:
       - 第1回 ガイダンスと調査の企画(1): week01.md
       - 第2回 調査の企画(2)：対象・方法・研究倫理: week02.md
