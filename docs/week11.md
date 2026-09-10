@@ -4,6 +4,8 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/11_page_finish.ipynb)
+    - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/template/report.html)
     - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990513)
     - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990518)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989705)
@@ -19,9 +21,10 @@
 ## やること
 
 - 冒頭5分：ふりかえりの小テスト（**成績には入りません**）
-- 装飾は注意を導くためにだけ使う
-- ページの仕上げ、図表の埋め込み
-- **公開前チェック（データを載せていないか）→ 提出**（公開は教員がまとめて行います）
+- 装飾は注意を導くためにだけ使う（**強調するとは、主張することである**）
+- 図を入れ、キャプションに **n（件数）** を書く
+- **公開前チェック**（ノートブックの `check()` が機械的に探す。最後は自分の目で）→ 提出
+- **公開は教員がまとめて行います**（アカウントは要りません）
 - グループ内リハーサル（時間を計る）
 - 授業末20分：**ふりかえりテスト**（成績には入りません。終わったらその場で解説します）
 

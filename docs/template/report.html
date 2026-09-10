@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>調査結果｜情報活用Ⅰ</title>
+<style>
+  :root{ --ink:#1a1d21; --sub:#5c6672; --line:#dfe4ea; --bg:#fff; --accent:#2f6f4f; }
+  @media (prefers-color-scheme:dark){
+    :root{ --ink:#e6eaee; --sub:#9aa5b1; --line:#2a323a; --bg:#14181c; --accent:#7fc0a0; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+       line-height:1.85;font-size:16px}
+  main{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+  h1{font-size:28px;line-height:1.4;margin:0 0 6px}
+  .meta{color:var(--sub);font-size:14px;margin:0 0 32px}
+  h2{font-size:20px;margin:40px 0 4px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+  .lead{color:var(--sub);font-size:14px;margin:0 0 12px}
+  p{margin:0 0 14px}
+  figure{margin:20px 0}
+  figure img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:4px}
+  figcaption{color:var(--sub);font-size:13.5px;margin-top:6px}
+  table{border-collapse:collapse;width:100%;font-size:15px;margin:16px 0}
+  th,td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+  th{background:color-mix(in srgb,var(--accent) 10%,transparent)}
+  .note{border-left:3px solid var(--accent);padding:2px 0 2px 14px;color:var(--sub);font-size:14.5px}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);color:var(--sub);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+
+<!-- ▼ タイトル：何を調べたのかが分かる名前にする（「アンケート結果」だけにしない） -->
+<h1>ここにタイトル</h1>
+<p class="meta">情報活用Ⅰ　◯班（氏名／氏名／氏名／氏名）　2026年◯月◯日</p>
+
+<!-- ▼ 1セクション＝1メッセージ。見出しの下に、そのセクションで言いたいことを1文で書く -->
+<h2>問い</h2>
+<p class="lead">何を確かめたかったのか。なぜそれを知りたかったのか。</p>
+<div data-fill="question"><p>ここに書く。</p></div>
+
+<h2>方法</h2>
+<p class="lead">誰に、いつ、どうやって聞いたか。何件集まったか。</p>
+<div data-fill="method"><p>ここに書く。<strong>回収数は必ず書く。</strong></p></div>
+
+<h2>結果</h2>
+<p class="lead">数字と図。ここでは「読み取れること」までにとどめ、意見は書かない。</p>
+
+<div data-fill="figures">
+<figure>
+  <!-- 画像はこの1行で入る。ファイル名を自分のものに変える -->
+  <img src="graph1.png" alt="グラフの内容を短く説明する文">
+  <figcaption>図1　ここにキャプション（何のグラフか・n＝いくつか）</figcaption>
+</figure>
+</div>
+
+<div data-fill="result"><p>ここに読み取りを書く。</p></div>
+
+<h2>限界</h2>
+<p class="lead">この調査で「言えないこと」を書く。ここが書けているかを見る。</p>
+<div data-fill="limits"><p class="note">
+  例：この調査は◯◯を対象としたもので、大学生全体の傾向とは言えない。
+  ◯◯については聞いていないため、原因までは分からない。
+</p></div>
+
+<h2>結論</h2>
+<p class="lead">問いに対する答えを、1〜2文で。</p>
+<div data-fill="conclusion"><p>ここに書く。</p></div>
+
+<footer>
+  <!-- 使ったデータの出どころを必ず記載する。他人の調査を引用したときも同じ -->
+  データ：自分たちで実施したアンケート（2026年◯月／回収◯件）<br>
+  ※ 回答してくれた方が特定できる情報は載せていません。
+</footer>
+
+</main>
+</body>
+</html>

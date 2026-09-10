@@ -107,9 +107,9 @@
       "pre_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990516"
     },
     "10": {
-      "notebook": "",
+      "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/10_page_build.ipynb",
       "data": "",
-      "material": "",
+      "material": "https://aonoa68.github.io/joho-katsuyo/template/report.html",
       "drill": "",
       "ai": "",
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989704",
@@ -120,9 +120,9 @@
       "pre_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990517"
     },
     "11": {
-      "notebook": "",
+      "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/11_page_finish.ipynb",
       "data": "",
-      "material": "",
+      "material": "https://aonoa68.github.io/joho-katsuyo/template/report.html",
       "drill": "",
       "ai": "",
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989705",

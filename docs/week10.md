@@ -4,6 +4,8 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/10_page_build.ipynb)
+    - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/template/report.html)
     - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990512)
     - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990517)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989704)
@@ -21,8 +23,9 @@
 - 冒頭5分：ふりかえりの小テスト（**成績には入りません**）
 - 統計の誤用パターン（相関と因果・条件をそろえた比較・割合の母数・外挿）
 - 構成の型：問い → 方法 → 結果 → **限界** → 結論
-- **HTMLの骨格**（見出し・段落・画像）
-- 1セクション1メッセージでページの骨組みを作る
+- **ページの雛形に、文章を入れていく**（HTMLのタグは覚えなくてよい）
+- 1セクション1メッセージ。**「限界」を飛ばさない**
+- できたHTMLを見て、**見出しの入れ子＝文章の構造**であることを確かめる
 - 授業末20分：**ふりかえりテスト**（成績には入りません。終わったらその場で解説します）
 
 ## 課題
