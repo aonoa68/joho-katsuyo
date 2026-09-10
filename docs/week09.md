@@ -7,6 +7,8 @@
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/09_visualization.ipynb)
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates.csv)
     - [🎯 ドリル](graph-drill.html)
+    - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990511)
+    - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990516)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989703)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989716)
     - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990132)

@@ -4,6 +4,8 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990512)
+    - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990517)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989704)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989717)
     - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990133)
