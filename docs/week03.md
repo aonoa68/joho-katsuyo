@@ -4,6 +4,7 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/week03-datatypes/)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989697)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989710)
 <!-- LINKS:END -->
@@ -14,9 +15,9 @@
 
 ## やること
 
-- データの種類（質的／量的、名義・順序・間隔・比率）
+- データの種類（質的／量的、名義・順序・間隔・比率）（→ [資料：データの種類と、あとからできること](week03-datatypes.md)）
 - **この種類ならこの集計・このグラフ**という対応
-- 悪い設問を直すクイズ
+- **悪い設問を直すクイズ10問**（→ [資料 §4](week03-datatypes.md)）
 - Formsで調査票のドラフトを作る
 
 ## 課題
