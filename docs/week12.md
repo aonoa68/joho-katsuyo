@@ -4,6 +4,7 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/week12-rubric/)
     - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990514)
     - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990519)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989706)
@@ -18,7 +19,7 @@
 
 - 冒頭5分：ふりかえりの小テスト（**成績には入りません**）
 - 全グループの発表（自分のページを開いて話す）
-- 相互評価シートの記入
+- 相互評価シートの記入（→ [評価基準と相互評価シート](week12-rubric.md)）
 - 全体講評
 
 ## 課題

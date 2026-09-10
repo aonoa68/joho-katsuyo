@@ -6,6 +6,7 @@
 !!! info "今日のリンク"
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/10_page_build.ipynb)
     - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/template/report.html)
+    - [🎯 ドリル](https://aonoa68.github.io/joho-katsuyo/week12-rubric/)
     - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990512)
     - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990517)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989704)

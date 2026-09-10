@@ -4,6 +4,7 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/week13-citation/)
     - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990515)
     - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990520)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989707)
@@ -17,7 +18,7 @@
 ## やること
 
 - 冒頭5分：ふりかえりの小テスト（**成績には入りません**）
-- 引用と剽窃／**AIをどこまで使ってよいか**
+- 引用と剽窃／**AIをどこまで使ってよいか**（→ [資料](week13-citation.md)）
 - 見出しの階層・目次・図表番号とキャプション
 - 図表をページに埋め込む
 - 骨子と引用リストを完成させる（**ここまで授業内で終わらせます**）
