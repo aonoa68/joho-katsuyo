@@ -4,6 +4,7 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/planning-sheet/)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989695)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989708)
     - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=989740)
@@ -20,9 +21,10 @@
 - この授業の進め方・評価（**定期試験はありません**）
 - **なぜOffice を使わないのか**（ベンダー依存の話）
 - 完成イメージを見る
-- 学内AIの紹介とログイン確認
-- データの見方（平均だけでは分からない）
+- **学内AIの紹介とログイン確認**（→ [資料](week01-ai.md)）
+- **データの見方**（平均だけでは分からない。→ [資料](week01-data.md)）
 - テーマを出す → 似たテーマの人と集まる → グループ確定
+- **企画シートを書く**（→ [書式](planning-sheet.md)。Moodleに直接書き込めます）
 
 ## 課題
 

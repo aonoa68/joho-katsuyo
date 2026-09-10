@@ -61,12 +61,15 @@ nav:
       - AIとの付き合い方: ai.md
       - 情報をどこから得るか: sources.md
       - 教科書で学びたい人へ: textbook.md
+      - 企画シートと調査計画書（書式）: planning-sheet.md
       - 配布データ（霊長類376種ほか）: dataset.md
   - ドリル:
       - グラフ選択ドリル: graph-drill.html
       - Excelの落とし穴: excel-traps.html
   - 各回の資料:
       - 第1回 ガイダンスと調査の企画(1): week01.md
+      - 第1回 資料 データの見方: week01-data.md
+      - 第1回 資料 学内AIの使い方: week01-ai.md
       - 第2回 調査の企画(2)：対象・方法・研究倫理: week02.md
       - 第2回 資料 どこまで言えるか: week02-sampling.md
       - 第3回 調査票の設計(1)：設問とデータの種類: week03.md
