@@ -4,6 +4,7 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [📄 今日の資料](https://docs.google.com/forms/d/e/1FAIpQLSfwcB7ubaBZh19sdUqL0RlXIpEQSTwJvVo4qtieGPm4--YRRQ/viewform)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989699)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989712)
 <!-- LINKS:END -->
@@ -15,7 +16,7 @@
 ## やること
 
 - 相互回答：クラス全員が全グループのフォームに答える
-- **クラス共通アンケート**に全員が回答する（以後の演習で使います）
+- **クラス共通アンケート**に全員が回答する（「今日のリンク」の📄から。**匿名です**。以後の演習で使います）
 - 回収の上積みと、公開時にやってはいけないこと
 - 回収状況を見て手を打つ
 
