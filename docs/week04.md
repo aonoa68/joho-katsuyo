@@ -4,6 +4,7 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
+    - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/04_setup_check.ipynb)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989698)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989711)
 <!-- LINKS:END -->
@@ -17,7 +18,9 @@
 - 代表値（平均・中央値・最頻値）とばらつき（標準偏差）
 - 自分の調査票で「出せる統計量」を確かめる → 設問を直す
 - 調査票を仕上げる
-- **Googleアカウントの確認と、演習環境（Colab）の起動確認**
+- **Googleアカウントの確認と、演習環境（Colab）の起動確認**（「今日のリンク」のノートブック）
+- **グラフの日本語が読めるか**まで確認する（何もしないと □□□ になります）
+- **自分のファイルをアップロードする練習**（第6回でいちばん詰まるところ）
 
 ## 課題
 
