@@ -5,6 +5,7 @@
 <!-- LINKS:START -->
 !!! info "今日のリンク"
     - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/planning-sheet/)
+    - [🗳 フォームに入力する](https://forms.gle/cKikqbKQMMZpfosd8)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989695)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989708)
     - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=989740)
