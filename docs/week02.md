@@ -5,7 +5,7 @@
 <!-- LINKS:START -->
 !!! info "今日のリンク"
     - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/week02-sampling/)
-    - [🎯 ドリル](https://aonoa68.github.io/joho-katsuyo/planning-sheet/)
+    - [🧾 課題の書式](https://aonoa68.github.io/joho-katsuyo/planning-sheet/)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989696)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989709)
 <!-- LINKS:END -->
