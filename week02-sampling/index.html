@@ -969,7 +969,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        聞かない
+        この授業では扱わない
       
     </span>
   </a>
@@ -1008,6 +1008,17 @@
     <span class="md-ellipsis">
       
         5. 🔴 データをどこに置くか
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 AIに聞いてよいこと・教員に確認すること
       
     </span>
   </a>
@@ -1592,7 +1603,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        聞かない
+        この授業では扱わない
       
     </span>
   </a>
@@ -1631,6 +1642,17 @@
     <span class="md-ellipsis">
       
         5. 🔴 データをどこに置くか
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 AIに聞いてよいこと・教員に確認すること
       
     </span>
   </a>
@@ -1678,6 +1700,8 @@
 
 <h1 id="2">第2回 資料：どこまで言えるか<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
 <p><strong>問い：友達20人に聞いた結果を「大学生は〜」と言っていいか。</strong></p>
+<p><strong>問題は人数だけではない。「友達を選んでいる」ことのほうが大きい。</strong>
+同じ選び方のまま人数を増やしても、選び方による偏りは消えない。</p>
 <hr />
 <h2 id="1">1. 全部は聞けない<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>知りたいのは「大学生」のことでも、実際に聞けるのは一部の人だけである。</p>
@@ -1703,9 +1727,13 @@
 </tbody>
 </table>
 <p><strong>母集団は「北星の学生」とは限らない。</strong>「日本の大学生はどうなのか」を知りたいなら母集団は日本の大学生であり、
-そのとき標本はこのクラスの40人になる。<strong>母集団を大きく取るほど、(c) で抜ける人が増える。</strong>
+そのとき標本はこのクラスの40人になる。<strong>母集団を大きく取るほど、計画書の 2-(c)「どんな人が抜けるか」に書くことが増える。</strong>
 どちらが正しいということはない。<strong>自分がどちらを知りたいのかを、先に言葉にする。</strong></p>
-<p><strong>調査の結論は、標本についてしか言えない。</strong>母集団のことを言いたいなら、<strong>標本が母集団を代表しているか</strong>が問われる。</p>
+<p><strong>集計が直接示すのは、実際に答えた人たちの結果である。</strong>母集団について述べるには、
+<strong>対象者の選び方・非回答の影響・推定に必要な前提</strong>を検討する必要がある。
+標本から母集団を推定すること自体は、統計の中心的な目的である。<strong>できない、という話ではない。</strong></p>
+<p><strong>ただしこの授業では、便宜的に回答者を集める。</strong>そのため、
+<strong>「大学生全体の傾向である」とは断定しない。</strong></p>
 <h3 id="1_1">だから最初に決めることは1つ<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>誰のことを知りたいのか。</strong></p>
@@ -1716,39 +1744,41 @@
 <table>
 <thead>
 <tr>
-<th>選び方</th>
+<th>対象の決め方</th>
 <th>どうやるか</th>
-<th>代表しているか</th>
+<th>特徴と注意点</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>全数調査</strong></td>
-<td>全員に聞く</td>
-<td>完全に代表する（国勢調査など）</td>
+<td>対象となる全員を調べる</td>
+<td><strong>一部だけを選ぶことによる誤差はない。</strong>ただし調査漏れ・未回答・誤回答は起こりうる</td>
 </tr>
 <tr>
 <td><strong>単純無作為抽出</strong></td>
 <td>名簿から<strong>くじ引き</strong>で選ぶ</td>
-<td>よく代表する</td>
+<td>恣意的な選び方を避けられ、<strong>選び方による誤差を評価できる。</strong>偶然の偏りと非回答の問題は残る</td>
 </tr>
 <tr>
 <td><strong>層別抽出</strong></td>
-<td>学部ごとに分けて、それぞれから無作為に選ぶ</td>
-<td>よく代表する。<strong>偏りを防げる</strong></td>
+<td>学部などに分け、それぞれから無作為に選ぶ</td>
+<td>各層の人数を確保でき、推定の精度が上がることがある。全体を集計するときは<strong>抽出率に応じた重み付け</strong>が要ることがある</td>
 </tr>
 <tr>
 <td><strong>多段抽出</strong></td>
-<td>まず学部を選び、その中からクラスを選び、さらに学生を選ぶ</td>
-<td>手間が少なく、そこそこ代表する</td>
+<td>学部→クラス→学生と段階的に無作為に選ぶ</td>
+<td>名簿の準備や調査の手間を減らせる。<strong>推定では段階的な選び方を考慮する必要がある</strong></td>
 </tr>
 <tr>
 <td>（<strong>便宜的な集め方</strong>）</td>
 <td>近くにいる人・友人・SNSで回す</td>
-<td><strong>代表しているとは言えない</strong></td>
+<td>実施しやすいが、<strong>母集団全体への一般化には強い制約がある</strong></td>
 </tr>
 </tbody>
 </table>
+<p><strong>これは「良い順」ではない。</strong>層別抽出はあらゆる偏りを防ぐ方法ではないし、多段抽出は「そこそこの方法」でもない。
+層別と多段は<strong>組み合わせて使うこともできる。</strong></p>
 <p><strong>この授業でやるのは、いちばん下である。</strong>それでよい。ただし、<strong>そう書く</strong>。</p>
 <blockquote>
 <p>「本調査は、担当教員の授業の履修者40名を対象としたものであり、大学生全体の傾向を示すものではない」</p>
@@ -1764,7 +1794,9 @@
 </blockquote>
 <p><strong>今も在籍している人</strong>に聞いた数字であることが多い。<strong>やめた人は数に入っていない。</strong></p>
 <h3 id="_2">非回答バイアス ── 誰が答えなかったか<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><strong>答えなかった人は、答えた人と違う。</strong>これが厄介なところである。</p>
+<p><strong>答えなかった人は、答えた人と違う特徴を持っているかもしれない。</strong>
+その違いが<strong>調べたい内容に関係していると</strong>、答えた人だけの集計は偏る。
+非回答があれば必ず偏る、というわけではない。<strong>関係しているかどうかを考える。</strong></p>
 <div class="admonition note">
 <p class="admonition-title">担当教員の経験から</p>
 <p>前期の授業で、うまく進んでいない学生を早めに見つけようとして、<strong>自己申告のアンケート</strong>を配ったことがある。</p>
@@ -1772,15 +1804,50 @@
 授業に来られていない人は、アンケートにも来ない。</p>
 <p>「困っている人は手を挙げてください」という方法は、<strong>手を挙げられる人しか拾えない。</strong></p>
 </div>
-<p><strong>回収率を必ず記録する。</strong>50人に配って20人が答えたなら、<strong>答えなかった30人がどんな人か</strong>を考える。</p>
+<p><strong>回収率を必ず記録する。</strong>50人に依頼して20人が答えたなら、回収率は40%。
+<strong>答えなかった30人がどんな人か</strong>を考える。</p>
+<p><strong>依頼した相手と、実際に答えた人は別物である。</strong>計画書でも分けて書く。</p>
+<table>
+<thead>
+<tr>
+<th>言葉</th>
+<th>指すもの</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>依頼対象</td>
+<td>調査対象として選んだ人</td>
+<td>50人</td>
+</tr>
+<tr>
+<td>回答者</td>
+<td>実際に答えた人</td>
+<td>20人</td>
+</tr>
+<tr>
+<td>回収率</td>
+<td>回答者 ÷ 依頼対象</td>
+<td>40%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SNSで広く募集した場合は、何人に届いたか分からないので回収率を計算できない。</strong>
+そのときは「計算できない」と、その事情を記録する。</p>
+<p><strong>回収率だけでは、偏りの有無も大きさも分からない。</strong>記録は出発点であって結論ではない。</p>
 <hr />
 <h2 id="4">4. 聞いてはいけないこと・守ること<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>調査は、答えてくれる人の時間と情報をもらう行為である。</p>
-<h3 id="_3">聞かない<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">この授業では扱わない<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>回答者の負担や情報漏えいのリスクを避けるため、<strong>この授業では次を調査しない。</strong></p>
 <ul>
-<li>病歴・信条・経済状況など、<strong>答えることで不利益が生じうること</strong></li>
-<li>個人が特定できる情報（氏名・学籍番号）を、必要がないのに聞く</li>
+<li>病歴・信条・家計の詳細など、<strong>特に慎重な扱いを必要とする事項</strong></li>
+<li>個人が特定できる情報（氏名・学籍番号）を、必要がないのに聞くこと</li>
 </ul>
+<p><strong>研究一般で禁止されている、という意味ではない。</strong>こうした事項を扱う調査では、
+目的・必要性・リスク・説明と同意・保護措置を慎重に検討したうえで実施する。
+<strong>この授業では、そこまでの手続きを取らないので扱わない。</strong></p>
 <h3 id="_4">伝える<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>何のための調査か</strong></li>
@@ -1807,20 +1874,44 @@
 <tbody>
 <tr>
 <td><strong>置いてよい</strong></td>
-<td>自分のGoogleドライブ（自分だけが見られる状態）／Moodleの提出</td>
+<td><strong>大学のアカウントで使うGoogleドライブ。</strong>共有は<strong>グループのメンバーと教員だけ</strong>に限る／Moodleの提出</td>
 </tr>
 <tr>
 <td><strong>置いてはいけない</strong></td>
-<td><strong>公開されるウェブページ</strong>／誰でも見られる共有リンク／SNS</td>
+<td><strong>公開されるウェブページ</strong>／誰でも見られる共有リンク／SNS／個人のアカウント</td>
 </tr>
 </tbody>
 </table>
-<p>第11回で成果物のページを公開する。そのとき<strong>公開してよいのは、集計したあとの表とグラフだけ</strong>である。</p>
+<p><strong>Googleフォームの設定を2つ確認する。</strong></p>
+<ul>
+<li><strong>「結果の概要を表示する」をオフにする。</strong>オンだと、回答した人が全員の回答やグラフを見られる</li>
+<li><strong>メールアドレスの収集をオフにする</strong>（匿名で集めるため）</li>
+</ul>
+<p>第11回で成果物のページを公開する。<strong>公開できるのは、集計したあとの表とグラフである。</strong></p>
+<p><strong>ただし「集計したから公開してよい」とは限らない。</strong></p>
+<ul>
+<li>該当者が1人しかいない区分は、その集計値から<strong>本人の回答が分かってしまう</strong></li>
+<li>散布図で<strong>1点が1人</strong>を表していれば、グラフにしただけでは守れていない</li>
+<li>他の情報と組み合わせて特定できないかも考える</li>
+</ul>
+<p><strong>公開してよいのは、個人の回答が推測できないことを確認した集計結果だけ。</strong>
+人数の少ない区分、珍しい属性の組み合わせ、個人の値が見える図は、
+<strong>区分をまとめる・出さないを検討し、教員の確認を受ける。</strong></p>
 <ul>
 <li>回答データ（CSV）は公開しない</li>
-<li><strong>自由記述はそのまま載せない</strong>（書いた本人には、誰の発言か分かってしまう）</li>
+<li><strong>自由記述はそのまま載せない。</strong>内容から本人が特定されることがあり、
+  答えた人が想定していない形で公開されることになる</li>
 </ul>
-<p><strong>匿名にすれば載せてよい、ということではない。</strong></p>
+<hr />
+<h2 id="55-ai">5.5 AIに聞いてよいこと・教員に確認すること<a class="headerlink" href="#55-ai" title="Permanent link">&para;</a></h2>
+<p>操作で困ったときは、まずAIに聞いてよい。<strong>ただし次は教員に確認する。</strong></p>
+<ul>
+<li><strong>調査してよい内容かどうか</strong></li>
+<li><strong>個人情報をどう扱うか</strong></li>
+<li><strong>公開してよいかどうか</strong></li>
+</ul>
+<p><strong>実際の回答データや、個人を特定できる情報を、教員の確認なくAIに入力しない。</strong>
+大学のCopilotにデータ保護の仕組みがあることと、<strong>調査データを入れてよいことは別の話</strong>である。</p>
 <hr />
 <h2 id="6-1">6. 卒業：1文で書く<a class="headerlink" href="#6-1" title="Permanent link">&para;</a></h2>
 <p>自分の調査について、<strong>次の1文を書けるようにする。</strong></p>
