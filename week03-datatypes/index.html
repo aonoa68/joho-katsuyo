@@ -1868,14 +1868,18 @@
 選択肢が順番を持てば順序になり、実際の数量を漏れなく選べれば量的になる。</p>
 <div class="admonition warning">
 <p class="admonition-title">チェックボックス（複数選択）の注意</p>
-<p><strong>選択肢ごとの人数は数えられる。</strong>ただし、<strong>回答者数を分母にした割合は、合計が100％を超える。</strong></p>
+<p><strong>選択肢ごとの人数は数えられる。</strong>ただし、<strong>回答者数を分母にした割合は、合計が100％を超えることがある。</strong></p>
 <p>10人に聞いて、バス6人・JR7人なら、60％と70％である。併用している人がいるからである。
+（全員が1つずつ選んだときは、ちょうど100％になる。）</p>
+<p>それぞれの割合は、<strong>回答した人のうち、その選択肢を選んだ人の割合</strong>を表す。
 <strong>「合計100％の円グラフ」にはできない。</strong>棒グラフで、選択肢ごとの人数を並べる。</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">数値で答えてほしいときは</p>
 <p>記述式にして、<strong>「回答の検証」→「数値」→「範囲」</strong> を設定する。
-そうしないと「だいたい30分くらい」「1時間半」と書かれて、<strong>あとで数えられなくなる。</strong></p>
+そうしないと「だいたい30分くらい」「1時間半」と書かれる。
+1時間半は90分に直せるが、<strong>直す作業が先に要るし、直し間違いも起きる。</strong>
+<strong>表記と単位をそろえてもらうほうが、あとが早い。</strong></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">以下の操作名は Google Forms のものです</p>
@@ -1898,6 +1902,7 @@ Google Forms でも Microsoft Forms でも紙でも、<strong>何を聞いて、
 <ol>
 <li><strong>回答者用のURL</strong>（学生が実際に答える画面のリンク）</li>
 <li><strong>設問の対応表</strong>（下の例の形。設問番号・設問文・データの種類・予定する集計やグラフ）</li>
+<li><strong>メンバーごとの担当記録</strong>（誰が何をしたか）</li>
 </ol>
 <p><strong>データの種類と集計方法は、回答者向けのフォームには書かない。</strong>対応表のほうに書く。
 フォームに書くと、答える人が混乱する。</p>
@@ -1909,7 +1914,7 @@ Google Forms でも Microsoft Forms でも紙でも、<strong>何を聞いて、
 <li>[ ] <strong>上の落とし穴10個を、目的に照らして点検する</strong></li>
 <li>[ ] <strong>設問ごとに「この設問だけから出せる集計・グラフ」を1つ書く</strong></li>
 </ul>
-<p><strong>次回（第4回）に、その対応表を埋めて設問を直す。</strong></p>
+<p><strong>第4回では、2つの設問を組み合わせた集計（名義×名義、量的×名義など）を対応表に足し、調査票を直す。</strong></p>
 <h3 id="_2">書き方の例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>最後の項目が分かりにくいという声があったので、例を示す。
 <strong>いまは「その設問だけ」で出せる集計を1つ書けばよい。</strong>
@@ -1942,14 +1947,31 @@ Google Forms でも Microsoft Forms でも紙でも、<strong>何を聞いて、
 <td>量的（比率）</td>
 <td>平均／ヒストグラム</td>
 </tr>
+<tr>
+<td>4</td>
+<td>通学に使う手段（あてはまるものすべて）</td>
+<td>名義・<strong>複数回答</strong></td>
+<td>選択肢ごとに「選んだ人数」を数える／棒グラフ</td>
+</tr>
+<tr>
+<td>5</td>
+<td>この授業で難しいと感じたこと（自由記述）</td>
+<td><strong>自由記述</strong></td>
+<td>内容を分類してから、分類ごとの件数を数える</td>
+</tr>
 </tbody>
 </table>
+<p><strong>複数回答と自由記述は、名義・順序・量的の3つに無理に当てはめなくてよい。</strong>
+上のように「名義・複数回答」「自由記述」と書けばよい。</p>
 <div class="admonition tip">
 <p class="admonition-title">設問の数と、種類の配分</p>
-<p><strong>6〜10問</strong>が目安である。これより少ないと分析が痩せ、多いと回答者が離脱する。</p>
+<p><strong>この授業では6〜10問を目安にする。</strong>設計・回答・分析にかけられる時間から決めた数で、
+一般的な上限や下限ではない。</p>
 <p><strong>種類の配分に決まりはない。</strong>名義○問・量的○問という比率を気にする必要はない。
-ただし、<strong>量的データが1問もないと平均もヒストグラムも出せない</strong>ので、
+ただし、<strong>この授業では平均とヒストグラムを練習する</strong>ので、
 <strong>「何分」「何円」「何回」で聞く設問を最低1問</strong>は入れておくこと（上のチェックリストにも入れてある）。</p>
+<p>（満足度のような順序のデータでも、等間隔とみなして平均を出すことはある。
+ただしヒストグラムの練習には、数値で聞いた設問があるほうがよい。）</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">数値で聞くときは、単位を設問文に書く</p>
