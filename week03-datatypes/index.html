@@ -1023,6 +1023,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="課題3（5点）調査票ドラフト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        書き方の例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1523,6 +1540,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="課題3（5点）調査票ドラフト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        書き方の例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1557,7 +1591,7 @@
 <tr>
 <th>種類</th>
 <th>何を表すか</th>
-<th>例</th>
+<th><strong>こう聞くと、この種類になる</strong></th>
 <th>できること</th>
 </tr>
 </thead>
@@ -1565,30 +1599,42 @@
 <tr>
 <td><strong>名義</strong></td>
 <td>分類。順番に意味がない</td>
-<td>学部、通学手段、性別</td>
+<td>「所属学部を選んでください」（経済／文／社会福祉…）</td>
 <td>数える。割合を出す</td>
 </tr>
 <tr>
 <td><strong>順序</strong></td>
 <td>順番に意味がある。<strong>間隔は不明</strong></td>
-<td>満足度（1〜5）、学年</td>
+<td>「満足度を選んでください」（1 不満 〜 5 満足）</td>
 <td>数える。<strong>中央値</strong>。順位</td>
 </tr>
 <tr>
 <td><strong>間隔</strong></td>
-<td>間隔が等しい。0が「なし」を意味しない</td>
-<td>気温、西暦</td>
+<td>間隔が等しい。<strong>0が「なし」を意味しない</strong></td>
+<td>「今朝起きたときの室温は何℃でしたか」</td>
 <td>平均・差</td>
 </tr>
 <tr>
 <td><strong>比率</strong></td>
-<td>間隔が等しく、0が「なし」</td>
-<td>通学時間、金額、人数</td>
+<td>間隔が等しく、<strong>0が「なし」</strong></td>
+<td>「昨日の勉強時間は何分でしたか」</td>
 <td>平均・差・<strong>倍で語れる</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>上2つを「質的データ」、下2つを「量的データ」と呼ぶ。</strong></p>
+<div class="admonition question">
+<p class="admonition-title">間隔と比率は、どこが違うのか</p>
+<p>見分け方は1つだけ。<strong>「0」が「まったく無い」を意味するかどうか</strong>である。</p>
+<ul>
+<li><strong>室温0℃</strong>は「気温がない」ではない。だから<strong>2倍暖かい</strong>とは言えない（20℃は10℃の2倍ではない）。これが<strong>間隔</strong></li>
+<li><strong>勉強時間0分</strong>は「まったく勉強していない」である。だから<strong>2倍勉強した</strong>と言える（60分は30分の2倍）。これが<strong>比率</strong></li>
+</ul>
+<p>調査票で間隔尺度になる設問は、実はあまり多くない。<strong>西暦・気温・偏差値・時刻</strong>くらいである。
+「何分」「何円」「何人」「何回」で聞いたものは、ほぼすべて<strong>比率</strong>だと思ってよい。</p>
+<p><strong>集計のうえでは、間隔と比率はどちらも「量的データ」として同じ扱いでよい</strong>（平均も標準偏差も出せる）。
+迷ったら量的データと書いておけば、課題3では減点しない。</p>
+</div>
 <h3 id="_1">満足度の平均は、出していいのか<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>満足度の1〜5は<strong>順序</strong>である。「4と5の差」と「1と2の差」が同じとは限らない。
 <strong>厳密には平均を出すべきではない。</strong></p>
@@ -1770,12 +1816,70 @@
 <hr />
 <h2 id="35">課題3（5点）調査票ドラフト<a class="headerlink" href="#35" title="Permanent link">&para;</a></h2>
 <ul>
-<li>[ ] Formsで調査票を作る</li>
+<li>[ ] Formsで調査票を作る。<strong>設問は6〜10問</strong>を目安にする</li>
 <li>[ ] <strong>各設問に「データの種類」を注記する</strong>（名義／順序／量的）</li>
-<li>[ ] <strong>上の落とし穴10個に当てはまっていないか</strong>を自分で点検する</li>
-<li>[ ] 「この設問から出せる集計」を1つずつ書く</li>
+<li>[ ] <strong>上の落とし穴10個に当てはまっていないか</strong>を点検する</li>
+<li>[ ] <strong>設問ごとに「この設問だけから出せる集計」を1つ書く</strong></li>
 </ul>
 <p><strong>次回（第4回）に、その対応表を埋めて設問を直す。</strong></p>
+<h3 id="_2">書き方の例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>最後の項目が分かりにくいという声があったので、例を示す。
+<strong>いまは「その設問だけ」で出せる集計を1つ書けばよい。</strong>
+掛け合わせの集計（名義×名義、量的×名義など）は、<strong>第4回で一緒にやる</strong>ので、ここでは書かなくてよい。</p>
+<table>
+<thead>
+<tr>
+<th>設問</th>
+<th>データの種類</th>
+<th>この設問だけから出せる集計</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>所属学部を選んでください</td>
+<td>名義</td>
+<td>学部ごとの人数と割合</td>
+</tr>
+<tr>
+<td>満足度（1〜5）</td>
+<td>順序</td>
+<td>中央値、1〜5それぞれの人数</td>
+</tr>
+<tr>
+<td>昨日の勉強時間は何分でしたか</td>
+<td>量的（比率）</td>
+<td>平均、ヒストグラム</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">設問の数と、種類の配分</p>
+<p><strong>6〜10問</strong>が目安である。これより少ないと分析が痩せ、多いと回答者が離脱する。</p>
+<p><strong>種類の配分に決まりはない。</strong>名義○問・量的○問という比率を気にする必要はない。
+ただし、<strong>量的データが1問もないと平均もヒストグラムも出せない</strong>ので、
+<strong>「何分」「何円」「何回」で聞く設問を最低1問</strong>は入れておくこと。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">数値で聞くときは、単位を設問文に書く</p>
+<p>「勉強時間はどのくらいですか」と聞くと、<strong>3と書く人（3時間）と180と書く人（180分）</strong>が混ざる。
+集計の段階では、どちらのつもりだったか分からない。</p>
+<ul>
+<li>✗ 「勉強時間はどのくらいですか」</li>
+<li>○ 「昨日の勉強時間は<strong>何分</strong>でしたか。<strong>半角数字のみ</strong>でお答えください（例：90）」</li>
+</ul>
+<p>Formsでは、<strong>回答の形式を「数値」にして、最小値と最大値を決めておく</strong>とよい。
+「1日の勉強時間」に 100（時間）と入力されても、範囲を 0〜1440 分にしておけば弾ける。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">落とし穴10個は、自分一人で点検しなくてよい</p>
+<p>自分で書いた設問を自分で疑うのは難しい。<strong>人の目を借りてよい。</strong></p>
+<ol>
+<li>まず自分で、10個のリストを<strong>1問ずつ</strong>当てる（設問5問×10項目＝50回の確認になるが、慣れれば速い）</li>
+<li>そのうえで、<strong>グループの他のメンバーに1人分だけ読んでもらう</strong></li>
+<li>AIに「この設問に、次の10個の問題が無いか見てください」と<strong>10個を貼って</strong>聞く</li>
+</ol>
+<p>3でAIに丸投げすると「全体的に良いと思います」で終わる。<strong>10個を渡して、1つずつ答えさせる</strong>こと。</p>
+</div>
 
 
 
