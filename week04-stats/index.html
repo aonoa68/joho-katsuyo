@@ -1035,6 +1035,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. ばらつき ── 標準偏差">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        標準偏差は、こうやって1つの数にしている
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1122,7 +1139,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         各自で（グループの誰か1人では代えられない）
@@ -1535,6 +1552,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2. ばらつき ── 標準偏差">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        標準偏差は、こうやって1つの数にしている
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1622,7 +1656,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         各自で（グループの誰か1人では代えられない）
@@ -1708,15 +1742,103 @@
 <li><strong>Aクラス</strong>：全員が平均の上にのっている。<strong>ずれが1つもない</strong>ので、標準偏差は <strong>0分</strong></li>
 <li><strong>Bクラス</strong>：0分の人が −20、40分の人が +20。<strong>ずれが大きい</strong>ので、標準偏差は <strong>20分</strong></li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">標準偏差は、こうやって1つの数にしている</p>
+<h3 id="1">標準偏差は、こうやって1つの数にしている<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>一人ひとりの<strong>偏差</strong>（平均からのずれ）を出す</li>
 <li><strong>2乗する。</strong>そのままだと、＋のずれと−のずれが打ち消し合って 0 になってしまうため</li>
 <li>2乗したものを<strong>平均する</strong>（正確には「データ数−1」で割る）。これが<strong>分散</strong></li>
 <li>分散の<strong>平方根</strong>をとると、元の単位（分）に戻る。これが<strong>標準偏差</strong></li>
 </ol>
-<p><strong>手で計算する必要はない。</strong>大事なのは、<strong>「平均から平均してどれくらい離れているか」を表した数</strong>だということである。</p>
+<p>式にすると、こうなる。</p>
+<div class="arithmatex">\[
+\text{分散}\;s^2=\frac{(x_1-\bar{x})^2+(x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n-1}
+\]</div>
+<div class="arithmatex">\[
+\text{標準偏差}\;s=\sqrt{s^2}
+\]</div>
+<table>
+<thead>
+<tr>
+<th>記号</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(x_1, x_2, \ldots, x_n\)</span></td>
+<td>一人ひとりの値（通学時間など）</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\bar{x}\)</span></td>
+<td>平均</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(n\)</span></td>
+<td>データの数（人数）</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(x_i-\bar{x}\)</span></td>
+<td><strong>偏差</strong>（上の図の矢印）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>上のBクラスで、実際に追ってみる。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1人目</th>
+<th>2人目</th>
+<th>3人目</th>
+<th>4人目</th>
+<th>5人目</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>値</td>
+<td>0</td>
+<td>0</td>
+<td>20</td>
+<td>40</td>
+<td>40</td>
+<td>平均 20</td>
+</tr>
+<tr>
+<td><strong>偏差</strong></td>
+<td>−20</td>
+<td>−20</td>
+<td>0</td>
+<td>+20</td>
+<td>+20</td>
+<td>足すと <strong>0</strong>（だから2乗する）</td>
+</tr>
+<tr>
+<td><strong>偏差の2乗</strong></td>
+<td>400</td>
+<td>400</td>
+<td>0</td>
+<td>400</td>
+<td>400</td>
+<td>合計 <strong>1600</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[
+s^2=\frac{1600}{5-1}=400 \qquad s=\sqrt{400}=20\;(\text{分})
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">手で計算する必要はない</p>
+<p>第6回で <code>df["通学時間分"].std()</code> と書けば、この計算がそのまま出る
+（<code>std()</code> も「データ数−1」で割る）。
+<strong>大事なのは、「平均からどれくらい離れているのが普通か」を表した数</strong>だということである。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">なぜ「データ数−1」で割るのか</p>
+<p><strong>いまは気にしなくてよい。</strong>手元の数人から、その外側の人たちのばらつきを見積もるときに、
+データ数で割ると<strong>小さく出すぎる</strong>ことが知られている。その補正である。</p>
+<p>「データ数で割る」流儀もあるが、<strong>この授業とPythonは「データ数−1」でそろえる。</strong></p>
 </div>
 <ul>
 <li><strong>標準偏差が小さい</strong> ＝ みんな平均の近くにいる（Aクラス）</li>
@@ -1866,7 +1988,7 @@
 <li>[ ] <strong>自分で1件テスト回答</strong>して、最後まで答えられることを確かめた</li>
 <li>[ ] <strong>匿名で集める設定</strong>になっていることを、テスト回答の結果で確かめた</li>
 </ul>
-<h3 id="1">各自で（グループの誰か1人では代えられない）<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h3 id="1_1">各自で（グループの誰か1人では代えられない）<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[ ] <strong>日本語のグラフが表示された画面</strong>のスクリーンショット</li>
 <li>[ ] <strong>renshu.csv を読み込めた画面</strong>のスクリーンショット</li>
@@ -2002,6 +2124,10 @@
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../js/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
