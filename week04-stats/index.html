@@ -1702,6 +1702,22 @@
 <li>Bクラス：<strong>0分・0分・20分・40分・40分</strong> → 平均20分</li>
 </ul>
 <p><strong>同じ平均なのに、ぜんぜん違う。</strong>この「散らばりぐあい」を1つの数にしたものが<strong>標準偏差</strong>である。</p>
+<p><img alt="ばらつきのイメージ" src="../img/stats/bara.svg" /></p>
+<p><strong>図の矢印が、一人ひとりの「平均からのずれ」</strong>である。これを<strong>偏差</strong>という。</p>
+<ul>
+<li><strong>Aクラス</strong>：全員が平均の上にのっている。<strong>ずれが1つもない</strong>ので、標準偏差は <strong>0分</strong></li>
+<li><strong>Bクラス</strong>：0分の人が −20、40分の人が +20。<strong>ずれが大きい</strong>ので、標準偏差は <strong>20分</strong></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">標準偏差は、こうやって1つの数にしている</p>
+<ol>
+<li>一人ひとりの<strong>偏差</strong>（平均からのずれ）を出す</li>
+<li><strong>2乗する。</strong>そのままだと、＋のずれと−のずれが打ち消し合って 0 になってしまうため</li>
+<li>2乗したものを<strong>平均する</strong>（正確には「データ数−1」で割る）。これが<strong>分散</strong></li>
+<li>分散の<strong>平方根</strong>をとると、元の単位（分）に戻る。これが<strong>標準偏差</strong></li>
+</ol>
+<p><strong>手で計算する必要はない。</strong>大事なのは、<strong>「平均から平均してどれくらい離れているか」を表した数</strong>だということである。</p>
+</div>
 <ul>
 <li><strong>標準偏差が小さい</strong> ＝ みんな平均の近くにいる（Aクラス）</li>
 <li><strong>標準偏差が大きい</strong> ＝ 平均から遠い人が多い（Bクラス）</li>
