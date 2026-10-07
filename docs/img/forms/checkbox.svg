@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 92" width="200" height="92" font-family="system-ui,-apple-system,sans-serif" font-size="13">
+<rect x="8" y="14" width="16" height="16" rx="3" fill="none" stroke="#8a949f" stroke-width="1.6"/>
+<text x="34" y="27" fill="#8a949f" font-size="13" text-anchor="start">徒歩</text>
+<rect x="8" y="42" width="16" height="16" rx="3" fill="#4a9ad4" stroke="#4a9ad4" stroke-width="1.6"/>
+<path d="M11.5 50.5 l3.5 3.5 l6 -7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="34" y="55" fill="#8a949f" font-size="13" text-anchor="start">バス</text>
+<rect x="8" y="70" width="16" height="16" rx="3" fill="#4a9ad4" stroke="#4a9ad4" stroke-width="1.6"/>
+<path d="M11.5 78.5 l3.5 3.5 l6 -7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="34" y="83" fill="#8a949f" font-size="13" text-anchor="start">JR</text>
+</svg>

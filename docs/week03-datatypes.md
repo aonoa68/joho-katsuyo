@@ -138,6 +138,28 @@
 
 ## 5. Formsの設問形式と、得られるデータの種類
 
+### 5.1 どちらのFormsでも、使うのはこの5つ
+
+**同じものを、GoogleとMicrosoftで違う名前で呼んでいる。**
+下の表の名前をクリックすると、それぞれの公式の説明ページが開く。
+
+| 見た目 | この授業での呼び方 | Google Forms での名前 | Microsoft Forms での名前 |
+|---|---|---|---|
+| ![ラジオボタン](img/forms/radio.svg){ width="150" } | **1つ選ぶ** | [ラジオボタン](https://support.google.com/docs/answer/7322334?hl=ja) | [選択肢](https://support.microsoft.com/ja-jp/forms/create-a-form-with-microsoft-forms)（複数回答＝オフ） |
+| ![チェックボックス](img/forms/checkbox.svg){ width="150" } | **いくつでも選ぶ** | [チェックボックス](https://support.google.com/docs/answer/7322334?hl=ja) | [選択肢](https://support.microsoft.com/ja-jp/forms/create-a-form-with-microsoft-forms)（**複数回答＝オン**） |
+| ![均等目盛](img/forms/scale.svg){ width="150" } | **段階で答える** | [均等目盛](https://support.google.com/docs/answer/7322334?hl=ja) | [評価](https://support.microsoft.com/ja-jp/forms/create-a-form-with-microsoft-forms)／[リッカート](https://support.microsoft.com/ja-jp/forms/create-a-form-with-microsoft-forms) |
+| ![数値の入力](img/forms/text-number.svg){ width="150" } | **数値を入力する** | [記述式](https://support.google.com/docs/answer/7322334?hl=ja)＋[回答の検証](https://support.google.com/docs/answer/3378864?hl=ja) | [テキスト](https://support.microsoft.com/ja-jp/forms/create-a-form-with-microsoft-forms)＋制限（数値） |
+| ![自由記述](img/forms/textarea.svg){ width="150" } | **自由に書いてもらう** | [段落](https://support.google.com/docs/answer/7322334?hl=ja) | [テキスト](https://support.microsoft.com/ja-jp/forms/create-a-form-with-microsoft-forms)（長い回答＝オン） |
+
+!!! note "名前が違うだけで、集まるデータは同じ"
+    - **Microsoft Forms に「チェックボックス」という種類はない。**「選択肢」を作って、**複数回答をオンにする**
+    - **Google Forms に「評価（星）」もあるが、この授業では使わない。**段階で答えてもらうなら均等目盛にそろえる
+    - **プルダウン（Google）とドロップダウン表示（Microsoft）は、ラジオボタンと同じもの**である。選択肢が多いときに畳んで見せているだけで、得られるデータは変わらない
+
+    上の画像は、この資料のために描いた図である。**実際の画面はそれぞれのリンク先で確認すること。**
+
+### 5.2 形式と、得られるデータの種類
+
 **データの種類は、「何を聞くか」と「どう答えてもらうか」の組み合わせで決まる。**
 設問形式だけでは決まらない。**数値で入力させれば必ず量的になる、わけではない。**
 

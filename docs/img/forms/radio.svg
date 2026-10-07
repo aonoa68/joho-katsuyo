@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 92" width="200" height="92" font-family="system-ui,-apple-system,sans-serif" font-size="13">
+<circle cx="16" cy="22" r="8" fill="none" stroke="#4a9ad4" stroke-width="1.6"/>
+<circle cx="16" cy="22" r="4" fill="#4a9ad4"/>
+<text x="34" y="27" fill="#8a949f" font-size="13" text-anchor="start">経済学部</text>
+<circle cx="16" cy="50" r="8" fill="none" stroke="#8a949f" stroke-width="1.6"/>
+<text x="34" y="55" fill="#8a949f" font-size="13" text-anchor="start">文学部</text>
+<circle cx="16" cy="78" r="8" fill="none" stroke="#8a949f" stroke-width="1.6"/>
+<text x="34" y="83" fill="#8a949f" font-size="13" text-anchor="start">社会福祉学部</text>
+</svg>
