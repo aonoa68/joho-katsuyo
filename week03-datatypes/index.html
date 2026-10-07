@@ -955,7 +955,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        何で4つに分かれるのか
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定義
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         満足度の平均は、出していいのか
@@ -1027,7 +1049,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         書き方の例
@@ -1528,7 +1550,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        何で4つに分かれるのか
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定義
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         満足度の平均は、出していいのか
@@ -1600,7 +1644,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         書き方の例
@@ -1645,43 +1689,93 @@
 <p><strong>だから、集める前に決める。</strong></p>
 <hr />
 <h2 id="2-4">2. データの4つの種類<a class="headerlink" href="#2-4" title="Permanent link">&para;</a></h2>
+<h3 id="4">何で4つに分かれるのか<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>分かれ目は、<strong>集めた値どうしを、どう比べられるか</strong>である。比べ方は4段階ある。</p>
+<ol>
+<li><strong>同じか、違うか</strong>が言える</li>
+<li><strong>どちらが大きいか</strong>（順番）が言える</li>
+<li><strong>どれだけ違うか</strong>（差）が言える</li>
+<li><strong>何倍か</strong>（比）が言える</li>
+</ol>
+<p><strong>どこまで言えるかで、データの種類が決まる。</strong>この4段階を<strong>尺度水準</strong>と呼ぶ。</p>
+<h3 id="_1">定義<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>種類</th>
-<th>何を表すか</th>
-<th><strong>こう聞くと、この種類になる</strong></th>
-<th>できること</th>
+<th>定義（この比べ方まで意味を持つ）</th>
+<th>言えないこと</th>
+<th>こう聞くと、この種類になる</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>名義</strong></td>
-<td>分類。順番に意味がない</td>
+<td><strong>同じか違うか</strong>だけ。値は<strong>分類のラベル</strong></td>
+<td>順番・差・倍</td>
 <td>「所属学部を選んでください」（経済／文／社会福祉…）</td>
-<td>数える。割合を出す</td>
 </tr>
 <tr>
 <td><strong>順序</strong></td>
-<td>順番に意味がある。<strong>間隔は不明</strong></td>
+<td>同じか違うか＋<strong>どちらが大きいか</strong>（順番）</td>
+<td>差の大きさ・倍</td>
 <td>「満足度を選んでください」（1 不満 〜 5 満足）</td>
-<td>数える。<strong>中央値</strong>。順位</td>
 </tr>
 <tr>
 <td><strong>間隔</strong></td>
-<td>間隔が等しい。<strong>0が「なし」を意味しない</strong></td>
+<td>順番＋<strong>どれだけ違うか</strong>（差）。<strong>0は約束で決めた位置</strong>で、「なし」ではない</td>
+<td>倍</td>
 <td>「今朝起きたときの室温は何℃でしたか」</td>
-<td>平均・差</td>
 </tr>
 <tr>
 <td><strong>比率</strong></td>
-<td>間隔が等しく、<strong>0が「なし」</strong></td>
+<td>差＋<strong>何倍か</strong>（比）。<strong>0が「まったくない」を表す</strong></td>
+<td>―</td>
 <td>「昨日の勉強時間は何分でしたか」</td>
-<td>平均・差・<strong>倍で語れる</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>上2つを「質的データ」、下2つを「量的データ」と呼ぶ。</strong></p>
+<p><strong>代表値も、この定義から決まる。</strong></p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>使える代表値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名義</td>
+<td>最頻値</td>
+</tr>
+<tr>
+<td>順序</td>
+<td>最頻値、中央値</td>
+</tr>
+<tr>
+<td>間隔・比率</td>
+<td>最頻値、中央値、<strong>平均</strong></td>
+</tr>
+</tbody>
+</table>
+<p>平均は<strong>足して割る</strong>計算なので、<strong>差に意味がある種類</strong>（間隔・比率）でないと、本来は使えない。</p>
+<div class="admonition warning">
+<p class="admonition-title">数字が振ってあるかどうかでは決まらない</p>
+<p><strong>学籍番号・電話番号・背番号</strong>は数字だが、<strong>名義</strong>である。
+足しても平均を出しても意味がない。</p>
+<p>アンケートの選択肢に <strong>1＝経済／2＝文／3＝社会福祉</strong> と番号を振っても、名義のままである。
+<strong>Excelやpandasは平均を計算してくれるが、その数値に意味はない。</strong></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">4つは入れ子になっている</p>
+<p><strong>下の段でできることは、上の段でも全部できる。</strong>比率＞間隔＞順序＞名義、の順に情報が多い。</p>
+<ul>
+<li><strong>比率で集めたものは、あとから順序や名義に落とせる</strong>（勉強時間の分 → 「60分未満／60分以上」）</li>
+<li><strong>名義で集めたものは、あとから比率に戻せない</strong>（「60分未満」と答えた人が何分だったかは、もう分からない）</li>
+</ul>
+<p>だから<strong>迷ったら、情報が多いほう（細かいほう）で聞く。</strong>§1の年齢の話と同じである。</p>
+</div>
 <div class="admonition question">
 <p class="admonition-title">間隔と比率は、どこが違うのか</p>
 <p>見分け方は1つだけ。<strong>「0」が「まったく無い」を意味するかどうか</strong>である。</p>
@@ -1694,7 +1788,7 @@
 <p><strong>集計のうえでは、間隔と比率はどちらも「量的データ」として同じ扱いでよい</strong>（平均も標準偏差も出せる）。
 迷ったら量的データと書いておけば、課題3では減点しない。</p>
 </div>
-<h3 id="_1">満足度の平均は、出していいのか<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_2">満足度の平均は、出していいのか<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>満足度の1〜5は<strong>順序</strong>である。「4と5の差」と「1と2の差」が同じとは限らない。
 <strong>厳密には平均を出すべきではない。</strong></p>
 <p>ただし実務では出す。この授業でも出す。<strong>ただし、そう分かったうえで出す。</strong></p>
@@ -1943,7 +2037,7 @@ Google Forms でも Microsoft Forms でも紙でも、<strong>何を聞いて、
 <li>[ ] <strong>設問ごとに「この設問だけから出せる集計・グラフ」を1つ書く</strong></li>
 </ul>
 <p><strong>第4回では、<a href="../week04-stats/">元の問いに答えるためにどの設問を組み合わせるか</a>を決めて対応表に足し、調査票を仕上げる。</strong></p>
-<h3 id="_2">書き方の例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">書き方の例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>最後の項目が分かりにくいという声があったので、例を示す。
 <strong>いまは「その設問だけ」で出せる集計を1つ書けばよい。</strong>
 掛け合わせの集計（名義×名義、量的×名義など）は、<strong>第4回で一緒にやる</strong>ので、ここでは書かなくてよい。</p>
