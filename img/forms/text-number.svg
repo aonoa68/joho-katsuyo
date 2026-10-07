@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 92" width="200" height="92" font-family="system-ui,-apple-system,sans-serif" font-size="13">
+<text x="8" y="22" fill="#8a949f" font-size="11" text-anchor="start">昨日の勉強時間（分）</text>
+<rect x="8" y="32" width="184" height="30" rx="4" fill="none" stroke="#8a949f" stroke-width="1.4"/>
+<text x="18" y="52" fill="#8a949f" font-size="13" text-anchor="start">90</text>
+<rect x="8" y="70" width="110" height="16" rx="3" fill="none" stroke="#4a9ad4" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="14" y="82" fill="#4a9ad4" font-size="10" text-anchor="start">数値 0〜1440 のみ</text>
+</svg>
