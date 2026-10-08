@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 230" width="700" height="230" font-family="system-ui,-apple-system,sans-serif">
+<text x="110.0" y="14" text-anchor="middle" fill="#8a949f" font-size="12" font-weight="600">量的 × 量的 → 散布図</text><text x="110.0" y="208" text-anchor="middle" fill="#8a949f" font-size="10">横軸が大きい人ほど、縦軸も大きいか</text>
+<line x1="34" y1="30" x2="34" y2="170" stroke="#8a949f" stroke-width="1.2"/><line x1="34" y1="170" x2="210" y2="170" stroke="#8a949f" stroke-width="1.2"/><text x="210" y="188" text-anchor="end" fill="#8a949f" font-size="10">通学時間（分）</text><text x="30" y="26" text-anchor="end" fill="#8a949f" font-size="10">睡眠時間</text>
+<circle cx="63.0" cy="140" r="4" fill="#c9596b"/>
+<circle cx="77.25" cy="120" r="4" fill="#c9596b"/>
+<circle cx="91.5" cy="125" r="4" fill="#c9596b"/>
+<circle cx="102.9" cy="100" r="4" fill="#c9596b"/>
+<circle cx="118.1" cy="96" r="4" fill="#c9596b"/>
+<circle cx="129.5" cy="78" r="4" fill="#c9596b"/>
+<circle cx="143.75" cy="84" r="4" fill="#c9596b"/>
+<circle cx="158.0" cy="62" r="4" fill="#c9596b"/>
+<circle cx="172.25" cy="66" r="4" fill="#c9596b"/>
+<circle cx="186.5" cy="48" r="4" fill="#c9596b"/>
+<text x="350.0" y="14" text-anchor="middle" fill="#8a949f" font-size="12" font-weight="600">量的 × 名義 → 並べた棒</text><text x="350.0" y="208" text-anchor="middle" fill="#8a949f" font-size="10">グループごとに平均を出して比べる</text>
+<line x1="274" y1="30" x2="274" y2="170" stroke="#8a949f" stroke-width="1.2"/><line x1="274" y1="170" x2="450" y2="170" stroke="#8a949f" stroke-width="1.2"/><text x="450" y="188" text-anchor="end" fill="#8a949f" font-size="10">学部</text><text x="270" y="26" text-anchor="end" fill="#8a949f" font-size="10">平均（分）</text>
+<rect x="296" y="100" width="30" height="70" fill="#2a9d8f" opacity="0.85"/>
+<text x="311" y="182" text-anchor="middle" fill="#8a949f" font-size="9">経済</text>
+<rect x="344" y="65" width="30" height="105" fill="#2a9d8f" opacity="0.85"/>
+<text x="359" y="182" text-anchor="middle" fill="#8a949f" font-size="9">文</text>
+<rect x="392" y="120" width="30" height="50" fill="#2a9d8f" opacity="0.85"/>
+<text x="407" y="182" text-anchor="middle" fill="#8a949f" font-size="9">社福</text>
+<text x="590.0" y="14" text-anchor="middle" fill="#8a949f" font-size="12" font-weight="600">名義 × 名義 → 積み上げ棒</text><text x="590.0" y="208" text-anchor="middle" fill="#8a949f" font-size="10">割合の違いを見る（クロス集計表）</text>
+<line x1="514" y1="30" x2="514" y2="170" stroke="#8a949f" stroke-width="1.2"/><line x1="514" y1="170" x2="690" y2="170" stroke="#8a949f" stroke-width="1.2"/><text x="690" y="188" text-anchor="end" fill="#8a949f" font-size="10">学年</text><text x="510" y="26" text-anchor="end" fill="#8a949f" font-size="10">割合</text>
+<rect x="536" y="85" width="30" height="85" fill="#c9596b" opacity="0.85"/>
+<rect x="536" y="30" width="30" height="55" fill="#d9a441" opacity="0.85"/>
+<text x="551" y="182" text-anchor="middle" fill="#8a949f" font-size="9">1年</text>
+<rect x="584" y="110" width="30" height="60" fill="#c9596b" opacity="0.85"/>
+<rect x="584" y="30" width="30" height="80" fill="#d9a441" opacity="0.85"/>
+<text x="599" y="182" text-anchor="middle" fill="#8a949f" font-size="9">2年</text>
+<rect x="632" y="125" width="30" height="45" fill="#c9596b" opacity="0.85"/>
+<rect x="632" y="30" width="30" height="95" fill="#d9a441" opacity="0.85"/>
+<text x="647" y="182" text-anchor="middle" fill="#8a949f" font-size="9">3年</text>
+<rect x="630" y="34" width="10" height="10" fill="#d9a441" opacity="0.85"/><text x="644" y="43" fill="#8a949f" font-size="9">はい</text>
+<rect x="630" y="50" width="10" height="10" fill="#c9596b" opacity="0.85"/><text x="644" y="59" fill="#8a949f" font-size="9">いいえ</text>
+</svg>

@@ -1081,7 +1081,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        組み合わせの型
+        組み合わせると、こう見える
       
     </span>
   </a>
@@ -1090,6 +1090,17 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        組み合わせの型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         書き方の例
@@ -1598,7 +1609,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        組み合わせの型
+        組み合わせると、こう見える
       
     </span>
   </a>
@@ -1607,6 +1618,17 @@
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        組み合わせの型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         書き方の例
@@ -1728,6 +1750,21 @@
 <strong>「いちばんありがちな値」を知りたいなら、最頻値を見る。</strong></p>
 </blockquote>
 <p>だから、<strong>平均を出すときは分布（ヒストグラム）も一緒に見る。</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">最頻値は、いつでも使えるわけではない</p>
+<p>上の例は <strong>10・20・20・30・120</strong> と、<strong>きりのいい値</strong>ばかりなので最頻値が出せた。</p>
+<p>ところが、<strong>「あなたの睡眠時間は何時間ですか」と自由に書かせる</strong>と、
+6.5・7・7.2・6・8.5 … と<strong>ほぼ全員が違う値</strong>になる。
+このとき最頻値は「<strong>たまたま2人が同じだった値</strong>」でしかなく、意味をなさない。</p>
+<p><strong>最頻値が役に立つのは、出てくる値の種類が限られているときである。</strong></p>
+<ul>
+<li><strong>選択肢で聞いたとき</strong>（名義・順序）── いちばん選ばれた選択肢が分かる</li>
+<li><strong>「何時間」と整数で答えさせたとき</strong> ── 同じ値が重なる</li>
+</ul>
+<p><strong>AIに「この設問から出せる集計は？」と聞くと、最頻値も挙げてくる。</strong>
+AIは<strong>データの種類</strong>しか見ていないので、<strong>実際にどんな値が集まるか</strong>までは分からない。
+そこを判断できるのは、<strong>設問を作った自分たち</strong>だけである。</p>
+</div>
 <hr />
 <h2 id="2">2. ばらつき ── 標準偏差<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>平均が同じでも、中身は違う。</p>
@@ -1904,7 +1941,11 @@ s^2=\frac{1600}{5-1}=400 \qquad s=\sqrt{400}=20\;(\text{分})
 <p><strong>第3回では、設問を1つずつ見て「この設問だけから何が出せるか」を書いた。</strong>
 <strong>第4回では、「元の問いに答えるには、どの設問とどの設問を組み合わせるか」を決める。</strong></p>
 <p><strong>これが「調査票の完成」の中身である。</strong></p>
-<h3 id="_1">組み合わせの型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_1">組み合わせると、こう見える<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><img alt="設問の組み合わせとグラフ" src="../img/stats/kumiawase.svg" /></p>
+<p><strong>どんな図になるのかを先に知っておくと、設問を選びやすい。</strong>
+上の3つは、第7回・第9回で実際に作る。</p>
+<h3 id="_2">組み合わせの型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1941,7 +1982,7 @@ s^2=\frac{1600}{5-1}=400 \qquad s=\sqrt{400}=20\;(\text{分})
 </tr>
 </tbody>
 </table>
-<h3 id="_2">書き方の例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">書き方の例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>問いが「<strong>通学時間が長い学生ほど、授業前夜の睡眠時間が短いか</strong>」だとする。</p>
 <blockquote>
 <p>問いに答えるため、<strong>通学時間（Q1）と睡眠時間（Q2）を組み合わせる。</strong>
