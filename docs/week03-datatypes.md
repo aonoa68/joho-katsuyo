@@ -157,6 +157,29 @@
 | ![数値の入力](img/forms/text-number.svg){ width="130" } | **数値を入力する** | [記述式 ↗](https://support.google.com/docs/answer/7322334?hl=ja)<br>＋[回答の検証 ↗](https://support.google.com/docs/answer/3378864?hl=ja) | [テキスト ↗](https://support.microsoft.com/ja-jp/forms/create-a-form-with-microsoft-forms)<br>＋制限（数値） |
 | ![自由記述](img/forms/textarea.svg){ width="130" } | **自由に書いてもらう** | [段落 ↗](https://support.google.com/docs/answer/7322334?hl=ja) | [テキスト ↗](https://support.microsoft.com/ja-jp/forms/create-a-form-with-microsoft-forms)<br>（長い回答＝オン） |
 
+!!! danger "🔴 Formsのリンクは2種類ある。提出するのは「回答用」"
+
+    グループで1つのフォームを作るので、**2つとも使う。**役割が違う。
+
+    | リンク | 何のため | 誰に渡すか |
+    |---|---|---|
+    | **共同作業のリンク** | 班員が**一緒に編集する**ため | **班のメンバーだけ** |
+    | **回答用のリンク** | **回答してもらう**ため | 回答者。**Moodleに提出するのはこちら** |
+
+    **共同作業のリンクを提出すると、教員は中身を見られない**（「アクセス権が必要です」と出る）。
+    編集画面のアドレスバーをそのままコピーした場合も同じである。
+
+    **回答用リンクの出し方**
+
+    - **Microsoft Forms** … 右上の「**回答を収集**」→ 出てきたリンクをコピー
+    - **Googleフォーム** … 右上の「**送信**」→ **リンクのタブ** → URLをコピー
+
+    **見分け方。**Microsoft Formsなら、URLに `ResponsePage` と入っていれば回答用、
+    `DesignPageV2` と入っていたら編集用である。
+
+    **確実な確かめ方は、シークレットウィンドウ（プライベートウィンドウ）で自分のリンクを開くこと。**
+    回答する人から、どう見えているかがそのまま分かる。
+
 !!! note "名前が違うだけで、集まるデータは同じ"
     - **Microsoft Forms に「チェックボックス」という種類はない。**「選択肢」を作って、**複数回答をオンにする**
     - **Google Forms に「評価（星）」もあるが、この授業では使わない。**段階で答えてもらうなら均等目盛にそろえる
