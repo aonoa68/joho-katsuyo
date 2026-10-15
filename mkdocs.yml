@@ -94,6 +94,6 @@ nav:
 
 extra_javascript:
   - js/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/tex-mml-svg.js   # 学内の回線で外部CDNが落ちると数式が空白になるため、SVG版を同梱（2026-10-15）
 
 copyright: © 2026 小野原 彩香 — 北星学園大学 情報活用
