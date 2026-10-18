@@ -115,7 +115,9 @@
       "submit_gC": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989702",
       "submit_sB": "https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989715",
       "quiz_gC": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990142",
-      "quiz_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990136"
+      "quiz_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990136",
+      "pre_gC": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=993427",
+      "pre_sB": "https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=993428"
     },
     "9": {
       "notebook": "https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/09_visualization.ipynb",
