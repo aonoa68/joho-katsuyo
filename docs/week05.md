@@ -4,7 +4,7 @@
 
 <!-- LINKS:START -->
 !!! info "今日のリンク"
-    - [📄 今日の資料](https://docs.google.com/forms/d/e/1FAIpQLSfwcB7ubaBZh19sdUqL0RlXIpEQSTwJvVo4qtieGPm4--YRRQ/viewform)
+    - [🗳 フォームに入力する](https://docs.google.com/forms/d/e/1FAIpQLSfwcB7ubaBZh19sdUqL0RlXIpEQSTwJvVo4qtieGPm4--YRRQ/viewform)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989699)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989712)
 <!-- LINKS:END -->
