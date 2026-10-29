@@ -7,6 +7,8 @@
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/06_data_cleaning.ipynb)
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates_raw.csv)
     - [🎯 ドリル](excel-traps.html)
+    - [🤖 今日使うAI（木3・グC）](https://m365.cloud.microsoft/chat)
+    - [🤖 今日使うAI（金3・社B）](https://m365.cloud.microsoft/chat/?titleId=T_f4d5e868-8f4d-5dba-aea5-c281e6d808c8&source=embedded-builder)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989700)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989713)
     - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=993425)
