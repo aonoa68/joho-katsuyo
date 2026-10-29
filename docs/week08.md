@@ -6,6 +6,8 @@
 !!! info "今日のリンク"
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/08_sorting_ranking.ipynb)
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates.csv)
+    - [🤖 今日使うAI（木3・グC）](https://m365.cloud.microsoft/chat)
+    - [🤖 今日使うAI（金3・社B）](https://m365.cloud.microsoft/chat/?titleId=T_b5a31336-ca19-2e94-d5eb-314be182860d&source=embedded-builder)
     - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=993427)
     - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=993428)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989702)
