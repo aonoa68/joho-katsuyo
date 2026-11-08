@@ -59,6 +59,7 @@ nav:
   - 授業の基本:
       - 授業のルール: rules.md
       - 課題一覧と配点: assignments.md
+      - 過程が残る道具を使う: process.md
       - この授業で使う道具: tools.md
       - AIとの付き合い方: ai.md
       - 情報をどこから得るか: sources.md
