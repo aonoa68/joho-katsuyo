@@ -6,6 +6,7 @@
 !!! info "今日のリンク"
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/07_crosstab.ipynb)
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates.csv)
+    - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/process/)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989701)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989714)
     - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990130)
@@ -15,6 +16,10 @@
 ## この回の問い
 
 > 全体で見ると差があるのに、グループごとに見ると差が消えるのはなぜか
+
+!!! tip "今日の資料（上のリンク）＝ [過程が残る道具を使う](process.md)"
+    **なぜピボットテーブルを使わず、コードで書くのか。**この授業が道具を選ぶときの基準です。
+    今日の「卒業」（同じ表を2通りの書き方で作って突き合わせる）も、この考え方です。
 
 ## 今日の段取り
 
