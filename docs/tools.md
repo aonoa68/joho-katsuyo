@@ -96,6 +96,31 @@
 
 ---
 
+## なぜ Python なのか
+
+**Python は、プログラマでない人のために作られた言語の子孫です。**
+
+Pythonを作った Guido van Rossum は、その前に **ABC** という言語の開発チームにいました。ABCは「**コンピュータは使えるが、プログラムは書かない人**」——科学者や学生——に教えるための言語でした。**読みやすい文法**と、**字下げで構造を表す書き方**は、そこから来ています。
+
+本人が後年、こう言っています。**Pythonが教育に向いているのは、ABCの特徴を多く残した副産物だ**と。
+
+!!! quote "コードが難しいのではありません"
+    難しそうに見える書き方の言語が、あるだけです。
+
+    ```python
+    mydf = pd.read_csv("data.csv")
+    mydf["学年"].value_counts()
+    ```
+
+    **読めば、何をしているか分かります。**「データを読み込んで、学年ごとに数える」。
+    **英語が読めれば、半分は読めています。**
+
+**この授業でPythonを使うのは、プログラマになるためではありません。**[過程が残る形](process.md)で作業を残すのに、いちばん読みやすい道具だからです。
+
+!!! note "出典"
+    - [The Making of Python（Guido van Rossum インタビュー）](https://www.artima.com/articles/the-making-of-python)
+    - [“I'd rather write code than papers”（CWI インタビュー）](https://www.cwi.nl/en/stories/interview-guido-van-rossum-201cid-rather-write-code-than-papers201d/)
+
 ## Python は覚えなくていい
 
 コードは**AIに書かせて構いません。**この授業で見るのは、書けるかどうかではなく、
