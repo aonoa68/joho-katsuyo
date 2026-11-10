@@ -7,6 +7,7 @@
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/07_crosstab.ipynb)
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates.csv)
     - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/process/)
+    - [📊 同じ課題をExcelでやると（手数の比較）](https://aonoa68.github.io/joho-katsuyo/week06-excel/)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989701)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989714)
     - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990130)
@@ -20,6 +21,12 @@
 !!! tip "今日の資料（上のリンク）＝ [過程が残る道具を使う](process.md)"
     **なぜピボットテーブルを使わず、コードで書くのか。**この授業が道具を選ぶときの基準です。
     今日の「卒業」（同じ表を2通りの書き方で作って突き合わせる）も、この考え方です。
+
+    **言葉だけでは確かめられないので、実際に数えました。**
+    → **[同じ課題をExcelでやると、どこで手間が増えるのか](week06-excel.md#_1)**
+
+    第6回の課題を全部Excelでやって、操作の回数を数えたものです。
+    **「Excelは手数が多い」ではありませんでした。**差が出たのは別の2か所です。
 
 ## 今日の段取り
 
@@ -56,7 +63,7 @@
 
 - シンプソンのパラドックス
 - クロス集計表（＝**分割表**）を作る。**作る表は、Excelのピボットテーブルで作るものと同じ**です
-- **なぜピボットテーブルという機能を使わないのか**（計算過程が残らない道具は、あとから確かめられない）　→ **[過程が残る道具を使う](process.md)**
+- **なぜピボットテーブルという機能を使わないのか**（マウスで作った表は、**記録しておかないと**あとから確かめられない）　→ **[過程が残る道具を使う](process.md)** ／ **[同じ課題をExcelでやると](week06-excel.md)**
 - **層別を1つ加えて、結論が変わるか確かめる**（**層別**＝3つめの項目でグループに分けて、グループごとに同じ表を作ること）
 - **同じ表を2通りの書き方で作って、一致するか確かめる**（`crosstab` と `groupby`）
 - 授業末20分：**ふりかえりテスト**（成績には入りません。終わったらその場で解説します）
