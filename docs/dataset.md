@@ -15,6 +15,7 @@
 
 - [primates_raw.csv](data/primates_raw.csv) … **欠測値が `-999` のまま**のもの。**第6回で使います**
 - [primates.csv](data/primates.csv) … `-999` を空欄に直したもの。第7回以降で使います
+- [第6回_模範解答_Excel版.xlsx](data/第6回_模範解答_Excel版.xlsx) … **同じ課題をExcelでやった場合の模範解答**（数式と手順ログが残った状態）。→ [解説](week06-excel.md)
 
 ### 出典（レポートに使うときは必ず書くこと）
 
