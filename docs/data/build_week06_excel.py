@@ -133,6 +133,12 @@ NB_STEPS = [
 ]
 NB_LOG_COST = 0  # 実行すればコードと出力がそのまま残るので、残すための追加作業はない
 
+# Excelの「マクロの記録」を使った場合に、過程を残すためにかかる操作
+#   記録開始2（開発タブ→マクロの記録）＋名前をつけてOK 2＋記録終了1＋.xlsm で保存4
+#   ※ 開発タブを初めて出すなら、さらに4操作（環境設定→リボンとツールバー→開発→OK）
+#   ※ 記録開始を押し忘れると何も残らない。あとから記録することはできない
+MACRO_LOG_COST = 9
+
 # 手順ログを手で書く手数は、手順の数から出す（4 = シート追加と名前の変更、3 = 1手順あたりの記入欄）
 LOG_COST = 4 + len(STEPS) * 3
 STEPS = [(s[0], s[1], s[2], LOG_COST if s[3] is None else s[3], s[4], s[5], s[6]) for s in STEPS]
@@ -442,7 +448,8 @@ def main():
     header_row(ws, 4, ["数えたもの", "Excel", "ノートブック", "差"], [40, 12, 16, 10])
     table = [
         ("A 計算そのものに必要な操作", excel_calc, nb_calc),
-        ("B 過程を残すための追加作業", excel_log, NB_LOG_COST),
+        ("B 過程を残すための追加作業（手順ログを手で書く）", excel_log, NB_LOG_COST),
+        ("B' 同上（マクロの記録を使う）", MACRO_LOG_COST, NB_LOG_COST),
         ("A+B 1回やり切るまでの操作", excel_calc + excel_log, nb_calc + NB_LOG_COST),
         ("C 回答が1件増えたときの操作", excel_row, nb_row),
         ("D 設問が1つ増えたときの操作", excel_col, nb_col),
@@ -453,13 +460,17 @@ def main():
         ws.cell(row=rr, column=2, value=a)
         ws.cell(row=rr, column=3, value=b)
         ws.cell(row=rr, column=4, value=f"=B{rr}-C{rr}")
-    ws.cell(row=11, column=1, value="ノートブック側の内訳").font = SUB
+    ws.cell(row=11, column=1, value=(
+        "※ B の 73 は「手順ログを手で書く」場合。Excelの「マクロの記録」を使えば 9 操作で済む"
+        "（記録開始2＋名前2＋記録終了1＋.xlsm で保存4）。ただし記録開始を押し忘れると何も残らず、"
+        "あとから記録することはできない。ノートブックは実行すれば残る。")).alignment = WRAP
+    ws.cell(row=13, column=1, value="ノートブック側の内訳").font = SUB
     for k, (what, n, _, _) in enumerate(NB_STEPS):
-        ws.cell(row=12 + k, column=1, value=what).alignment = WRAP
-        ws.cell(row=12 + k, column=2, value=n)
-    ws.cell(row=12 + len(NB_STEPS), column=1, value="合計").font = SUB
-    ws.cell(row=12 + len(NB_STEPS), column=2,
-            value=f"=SUM(B12:B{11+len(NB_STEPS)})").font = SUB
+        ws.cell(row=14 + k, column=1, value=what).alignment = WRAP
+        ws.cell(row=14 + k, column=2, value=n)
+    ws.cell(row=14 + len(NB_STEPS), column=1, value="合計").font = SUB
+    ws.cell(row=14 + len(NB_STEPS), column=2,
+            value=f"=SUM(B14:B{13+len(NB_STEPS)})").font = SUB
 
     check_formulas(wb)
     wb.save(OUT_XLSX)
@@ -467,7 +478,7 @@ def main():
     counts = dict(
         rows=nrow, cols=ncol, num_cols=len(num_cols),
         formulas_in_clean=nrow * ncol,
-        excel=dict(calc=excel_calc, log=excel_log,
+        excel=dict(calc=excel_calc, log=excel_log, log_macro=MACRO_LOG_COST,
                    total=excel_calc + excel_log, row_add=excel_row, col_add=excel_col),
         notebook=dict(calc=nb_calc, log=NB_LOG_COST,
                       total=nb_calc + NB_LOG_COST, row_add=nb_row, col_add=nb_col),

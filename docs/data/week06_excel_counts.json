@@ -6,6 +6,7 @@
   "excel": {
     "calc": 76,
     "log": 73,
+    "log_macro": 9,
     "total": 149,
     "row_add": 8,
     "col_add": 34
