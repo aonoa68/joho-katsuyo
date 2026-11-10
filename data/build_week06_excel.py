@@ -16,6 +16,7 @@
 
 import json
 import os
+import re
 
 import pandas as pd
 from openpyxl import Workbook
@@ -74,10 +75,10 @@ STEPS = [
      "見出し行をコピー → 貼り付け",
      2, "値として残る", 0, 2),
     (11, "-999 が何個あるかを数える",
-     "=COUNTIF('01_元データ'!D:D,-999) → 右へフィル",
+     "「=COUNTIF('01_元データ'!D:D,-999)」を入力 → 右へフィル",
      2, "数式として残る", 0, 2),
     (12, "整形後に残った有効件数を数える",
-     "=COUNT('03_整形後'!D:D) → 右へフィル",
+     "「=COUNT('03_整形後'!D:D)」を入力 → 右へフィル",
      2, "数式として残る", 0, 2),
     (13, "基本統計量のシートを作る",
      "＋ → 右クリック → 名前の変更 → 入力",
@@ -104,7 +105,7 @@ STEPS = [
      "貼り付け",
      1, "値として残る（何と聞いたかは残らない）", 0, 0),
     (21, "3つが一致するかの判定式を作る",
-     "=IF(ABS(…)<0.1,\"一致\",\"ずれ\") → 下へフィル",
+     "「=IF(ABS(…)<0.1,\"一致\",\"ずれ\")」を入力 → 下へフィル",
      2, "数式として残る", 0, 0),
     (22, "🔴 手順ログ（このシート）を手で書く",
      "＋ → 名前の変更（4操作）＋ 1手順ごとに「何をしたか／どこで／なぜ」の3つを入力（手順の数×3）",
@@ -135,6 +136,29 @@ NB_LOG_COST = 0  # 実行すればコードと出力がそのまま残るので�
 # 手順ログを手で書く手数は、手順の数から出す（4 = シート追加と名前の変更、3 = 1手順あたりの記入欄）
 LOG_COST = 4 + len(STEPS) * 3
 STEPS = [(s[0], s[1], s[2], LOG_COST if s[3] is None else s[3], s[4], s[5], s[6]) for s in STEPS]
+
+
+def check_formulas(wb):
+    """テキストのつもりのセルが数式になっていないか検査する。
+
+    openpyxl は "=" で始まる文字列を数式として保存する。日本語の説明文が数式に
+    なると、Excel は「エラーが検出されました」と言ってそのセルを削除する
+    （LibreOffice は黙って通すので、再計算の検証だけでは見つからない）。
+    """
+    bad = []
+    for ws in wb:
+        for row in ws.iter_rows():
+            for c in row:
+                if c.data_type != "f" or not isinstance(c.value, str):
+                    continue
+                body = re.sub(r"'[^']*'!", "", c.value)       # シート名の参照を外す
+                body = re.sub(r'"[^"]*"', "", body)            # 文字列リテラルを外す
+                if re.search(r"[ぁ-んァ-ヶ一-龥→]", body):
+                    bad.append(f"{ws.title}!{c.coordinate}: {c.value[:60]}")
+    if bad:
+        raise SystemExit(
+            "数式になってはいけないセルが数式になっています（Excelが修復を求めます）:\n  "
+            + "\n  ".join(bad))
 
 
 def main():
@@ -284,7 +308,7 @@ def main():
                     value=f"={fn}('{CLEAN}'!{L}2:{L}{last_row})")
     ws.cell(row=12, column=1, value="使った数式").font = SUB
     ws.cell(row=12, column=2,
-            value=f"=COUNT('{CLEAN}'!{first_num}2:{first_num}{last_row}) など。"
+            value=f"「=COUNT('{CLEAN}'!{first_num}2:{first_num}{last_row})」など。"
                   "文字の列（学名・科・属）は COUNT が 0 になる＝数えるものがない、で正しい。")
     ws.cell(row=13, column=1, value="注意").font = SUB
     ws.cell(row=13, column=2,
@@ -437,6 +461,7 @@ def main():
     ws.cell(row=12 + len(NB_STEPS), column=2,
             value=f"=SUM(B12:B{11+len(NB_STEPS)})").font = SUB
 
+    check_formulas(wb)
     wb.save(OUT_XLSX)
 
     counts = dict(
