@@ -8,6 +8,7 @@
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates.csv)
     - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/process/)
     - [📊 同じ課題をExcelでやると（手数の比較）](https://aonoa68.github.io/joho-katsuyo/week06-excel/)
+    - [🎬 動画：過程を残す作業が、別の仕事になる（1分20秒）](https://notebooklm.link.google/UqfJGUAkFWOQ)
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989701)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989714)
     - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990130)
