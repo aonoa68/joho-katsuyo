@@ -1343,6 +1343,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../colab-traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8回 資料 Colabで詰まるところ一覧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../week09/" class="md-nav__link">
         
   
@@ -1875,12 +1903,20 @@
 「▶ を押したのに反応がない」と思ったら、まず<strong>行の先頭を見てください。</strong></p>
 </div>
 <h3 id="2-csv">② CSVをどこに置くか<a class="headerlink" href="#2-csv" title="Permanent link">&para;</a></h3>
-<p>Colabの<strong>左端のフォルダのアイコン（📁）</strong>をクリックすると、枠が開きます。<strong>そこにCSVをドラッグする</strong>だけです。</p>
-<p><strong>開いた最初の場所に置いてください。</strong>別のフォルダを開いてしまうと、どこに置いたか分からなくなります。
-置けるとファイル名が一覧に出ます。<code>pd.read_csv("ファイル名.csv")</code> に書く名前は、<strong>その一覧の名前と1文字もちがわない</strong>ようにします。</p>
+<p>Colabの<strong>左端のフォルダのアイコン（📁）</strong>をクリックすると、枠が開きます。
+<strong>上にならぶアイコンの、いちばん左の「上向き矢印に線」（セッション ストレージにアップロード）</strong>を押して、CSVを選びます。</p>
+<div class="admonition danger">
+<p class="admonition-title">🔴 ドラッグして落とすのは、やめてください</p>
+<p>フォルダの上に落ちると、<strong>その中</strong>に入ってしまいます。<code>/content/○○.csv</code> のつもりが
+<code>/content/sample_data/○○.csv</code> になり、<strong>「入れたはずなのに見つからない」</strong>になります。
+<strong>画面上は見分けがつきません。</strong></p>
+</div>
+<p>置けるとファイル名が一覧に出ます。<code>pd.read_csv(" ")</code> に書く名前は、<strong>手で打たずにコピーしてください。</strong>
+一覧のファイルを<strong>右クリック →「パスをコピー」</strong>で、引用符の中に貼り付けます。
+（日本語・スペース・括弧の入ったファイル名でも、これなら間違えません）</p>
 <div class="admonition warning">
 <p class="admonition-title">置いたファイルは、しばらく経つと消えます</p>
-<p>Colabはつなぎ直すと、置いたファイルが消えます。<strong>壊れたのではありません。</strong>もう一度ドラッグすれば戻ります。
+<p>Colabはつなぎ直すと、置いたファイルが消えます。<strong>壊れたのではありません。</strong>もう一度アップロードすれば戻ります。
 消えて困るものを、ここに置いたままにしないでください。</p>
 </div>
 <h3 id="3">③ 列名に改行が入っている<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
