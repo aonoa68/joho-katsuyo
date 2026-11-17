@@ -1834,9 +1834,8 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;列ごとの回答数&quot;</span><span class="p">)</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">mydf</span><span class="o">.</span><span class="n">notna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
 </code></pre></div>
-<p><strong>③で名前が出た列は、使えない。</strong>書き間違いでも、書き方が悪いのでもない。<strong>回答が存在しない。</strong>
-この授業で実際に起きている。設問を後から足した／表を手で編集した、などで起きる。
-<strong>その列を使うのはあきらめて別の列にするか、班で元のFormsを確認する。</strong></p>
+<p><strong>③で名前が出るのは、たいてい無害な列である。</strong>Formsの書き出しには <code>名前</code>・<code>最終変更時刻</code> のような<strong>最初から空の列</strong>が必ず付いてくる。フォームを「クイズ」形式で作った班には、<code>合計点数</code>・<code>クイズのフィードバック</code>・<code>フィードバック - ○○</code> という空の列も付く。<strong>どれも無視してよい。</strong></p>
+<p><strong>自分が使いたい設問の列が③に出たときだけ</strong>、班で元のFormsを確認する。</p>
 <table>
 <thead>
 <tr>
@@ -1847,14 +1846,14 @@
 </thead>
 <tbody>
 <tr>
-<td><code>全部空の列: なし</code></td>
-<td>問題なし</td>
-<td>そのまま先へ進む</td>
+<td><code>名前</code>・<code>最終変更時刻</code>・<code>合計点数</code> などが出た</td>
+<td>Formsが付けた列。<strong>最初から空</strong></td>
+<td>無視してよい</td>
 </tr>
 <tr>
-<td>列の名前が出た</td>
-<td><strong>その列には回答が1件もない</strong></td>
-<td>別の列を使う／班で元のFormsを書き出し直す</td>
+<td><strong>使いたい設問の列</strong>が出た</td>
+<td>その列には回答がない</td>
+<td>班で元のFormsを確認する</td>
 </tr>
 <tr>
 <td>回答数が思ったより少ない</td>
@@ -1863,6 +1862,13 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition danger">
+<p class="admonition-title">🔴 <code>head()</code> の5行だけで「空だ」と決めない</p>
+<p><code>mydf.head()</code> は<strong>最初の5行しか表示しない。</strong>そこが空欄でも、<strong>下のほうには入っていることがある。</strong>
+実際、このクラスにも<strong>先頭5行だけが空欄</strong>という列がある。全体では37件中28件に回答が入っているのに、
+5行だけを見れば「この列は空だ」と<strong>判断してしまう可能性がある。</strong>
+空かどうかは、必ず上の <code>notna().sum()</code> で数える。</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># ④ 表をExcelのように見る（第7回でやったもの）</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">#    🔴 見るだけ。ここで直してはいけません。</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">sheets</span>
@@ -1909,9 +1915,9 @@
 <td>同上</td>
 </tr>
 <tr>
-<td>表が空（<code>Empty DataFrame</code>）になる</td>
-<td><strong>その列に回答が1件も入っていない</strong>ことがある</td>
-<td><code>mydf[col].notna().sum()</code> で確かめる。0件ならその列は使えない。<strong>班で元のFormsを確認する</strong></td>
+<td>表が空（<code>Empty DataFrame</code>）になる／件数が全部 <code>0</code> になる</td>
+<td>🔴 <strong>区分にまとめた結果を、元の列に書き戻している</strong>（下の §4 を見る）。まれに、その列に回答がない</td>
+<td>まず <code>pd.read_csv</code> のセルを押し直す。区分は<strong>新しい名前の列</strong>に入れる。回答の有無は <code>mydf[col].notna().sum()</code> で数える</td>
 </tr>
 </tbody>
 </table>
