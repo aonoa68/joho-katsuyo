@@ -6,12 +6,12 @@
 !!! info "今日のリンク"
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/11_page_finish.ipynb)
     - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/template/report.html)
-    - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990513)
-    - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990518)
+    - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990513) … **成績には入りません**
+    - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990518) … **成績には入りません**
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989705)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989718)
-    - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990134)
-    - [✅ ふりかえりテスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990140)
+    - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990134) … **成績には入りません**
+    - [✅ ふりかえりテスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990140) … **成績には入りません**
 <!-- LINKS:END -->
 
 ## この回の問い
@@ -20,6 +20,7 @@
 
 ## やること
 
+- 授業の最初の5分：**冒頭テスト**（前回の内容を3問。**成績には入りません**）
 - 冒頭5分：ふりかえりの小テスト（**成績には入りません**）
 - 装飾は注意を導くためにだけ使う（**強調するとは、主張することである**）
 - 図を入れ、キャプションに **n（件数）** を書く

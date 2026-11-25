@@ -7,12 +7,12 @@
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/10_page_build.ipynb)
     - [📄 今日の資料](https://aonoa68.github.io/joho-katsuyo/template/report.html)
     - [🎯 ドリル](https://aonoa68.github.io/joho-katsuyo/week12-rubric/)
-    - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990512)
-    - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990517)
+    - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990512) … **成績には入りません**
+    - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990517) … **成績には入りません**
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989704)
     - [📝 課題を提出する（金3・社B）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989717)
-    - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990133)
-    - [✅ ふりかえりテスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990139)
+    - [✅ ふりかえりテスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990133) … **成績には入りません**
+    - [✅ ふりかえりテスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990139) … **成績には入りません**
 <!-- LINKS:END -->
 
 ## この回の問い
@@ -21,6 +21,7 @@
 
 ## やること
 
+- 授業の最初の5分：**冒頭テスト**（前回の内容を3問。**成績には入りません**）
 - 冒頭5分：ふりかえりの小テスト（**成績には入りません**）
 - 統計の誤用パターン（相関と因果・条件をそろえた比較・割合の母数・外挿）
 - 構成の型：問い → 方法 → 結果 → **限界** → 結論

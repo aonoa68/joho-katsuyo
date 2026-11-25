@@ -40,13 +40,23 @@ LABELS = [
     ("quiz_sB",   "✅ ふりかえりテスト（金3・社B）"),
 ]
 
+# 🔴 冒頭テスト・ふりかえりテストは成績に入らない（添付7「これは授業？研究？」／IRB 16-(c)）。
+#    リンクの横に書いておかないと、学生は小テストを成績だと思う。
+NOTES = {
+    "pre_gC":  "**成績には入りません**",
+    "pre_sB":  "**成績には入りません**",
+    "quiz_gC": "**成績には入りません**",
+    "quiz_sB": "**成績には入りません**",
+}
+
 def block(week: str) -> str:
     w = CFG["weeks"].get(week, {})
     rows = []
     for key, label in LABELS:
         url = (w.get(key) or "").strip()
         if url:
-            rows.append(f"- [{label}]({url})")
+            note = NOTES.get(key)
+            rows.append(f"- [{label}]({url})" + (f" … {note}" if note else ""))
         elif key in ("submit_gC", "submit_sB") and week != "14":
             rows.append(f"- {label} … 準備中")
     if not rows:
