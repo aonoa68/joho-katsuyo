@@ -1,0 +1,2032 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="北星学園大学「情報活用／情報活用」2026年度後期 授業資料">
+      
+      
+        <meta name="author" content="小野原 彩香">
+      
+      
+        <link rel="canonical" href="https://aonoa68.github.io/joho-katsuyo/excel-map/">
+      
+      
+        <link rel="prev" href="../week08-excel/">
+      
+      
+        <link rel="next" href="../week09/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>参考 各回の概念はExcelではどう扱われているか - 情報活用</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#excel" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="情報活用" class="md-header__button md-logo" aria-label="情報活用" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            情報活用
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              参考 各回の概念はExcelではどう扱われているか
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="ダークモードに切り替え"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="ダークモードに切り替え" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="ライトモードに切り替え"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="ライトモードに切り替え" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="情報活用" class="md-nav__button md-logo" aria-label="情報活用" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    情報活用
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ホーム
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    授業の基本
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    授業の基本
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    授業のルール
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assignments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    課題一覧と配点
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    過程が残る道具を使う
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    この授業で使う道具
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AIとの付き合い方
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    情報をどこから得るか
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../textbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教科書で学びたい人へ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planning-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企画シートと調査計画書（書式）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配布データ（霊長類376種ほか）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ドリル
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ドリル
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph-drill.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    グラフ選択ドリル
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../excel-traps.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excelの落とし穴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    各回の資料
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    各回の資料
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1回 ガイダンスと調査の企画(1)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week01-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1回 資料 データの見方
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week01-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第1回 資料 学内AIの使い方
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2回 調査の企画(2)：対象・方法・研究倫理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week02-sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第2回 資料 どこまで言えるか
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3回 調査票の設計(1)：設問とデータの種類
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week03-datatypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3回 資料 データの種類と、あとからできること
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plan-mistakes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第3回 資料 課題2 よくある間違い集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4回 調査票の設計(2)：分布と代表値＋環境の準備
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week04-stats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第4回 資料 代表値とばらつき、設問の組み合わせ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第5回 調査の実施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6回 CSVを読み込む・整形・記述統計
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week06-excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第6回 資料 同じ課題をExcelでやると
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第7回 データの整理と比較：クロス集計
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8回 データの加工：並べ替え・ランキング
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colab-traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8回 資料 Colabで詰まるところ一覧
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week08-excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第8回 資料 同じ概念をExcelではどう扱っているか
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考 各回の概念はExcelではどう扱われているか
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    参考 各回の概念はExcelではどう扱われているか
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#w03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第3回 データの種類
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第4回 代表値とばらつき
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第5回 調査の実施・回収記録
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第7回 クロス集計
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#689" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第6回・第8回・第9回
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        出どころ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第9回 データの表現：グラフ・散布図
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第10回 成果物ページの構成（HTML）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第11回 ページの仕上げと公開
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12回 報告書の作成
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week13-citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第12回 資料 引用と剽窃、AIの使い方
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13回 プレゼンテーションの実施
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week12-rubric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第13回 資料 評価基準と相互評価
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第14回 総復習・まとめ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#w03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第3回 データの種類
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w04" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第4回 代表値とばらつき
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第5回 調査の実施・回収記録
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w07" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第7回 クロス集計
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#689" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第6回・第8回・第9回
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        出どころ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="excel">参考 各回の概念は、Excelではどう扱われているか<a class="headerlink" href="#excel" title="Permanent link">&para;</a></h1>
+<p><strong>この授業でやってきたことは、ほとんどExcelにも同じものがあります。</strong>
+ちがうのは、<strong>名前と既定値と、壊れ方</strong>です。</p>
+<div class="admonition info">
+<p class="admonition-title">これは参考資料です（成績には入りません）</p>
+<p><strong>終わった回のぶんをまとめてあります。</strong>読まなくても課題には影響しません。</p>
+<p>片方しか知らないと「そういうものだ」で終わります。
+<strong>両方を並べると、どちらの意味も分かります。</strong></p>
+<p>くわしい回は別ページにあります：
+<strong><a href="../week06-excel/">第6回 同じ課題をExcelでやると（手数を数えた）</a></strong> ／
+<strong><a href="../week08-excel/">第8回 並べ替え・ランキング</a></strong></p>
+</div>
+<hr />
+<h2 id="w03">第3回 データの種類<a class="headerlink" href="#w03" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>Excel</th>
+<th>ノートブック（pandas）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>列が数値か文字か</td>
+<td><strong>列には型がない。</strong>セルごとの「表示形式」だけ</td>
+<td><strong>列ごとに型がある</strong>（<code>mydf.dtypes</code>／<code>object</code> ＝文字が混ざっている）</td>
+</tr>
+<tr>
+<td>選択肢を数える</td>
+<td><code>COUNTIF</code></td>
+<td><code>value_counts()</code></td>
+</tr>
+<tr>
+<td>順序尺度（満足度1〜5）</td>
+<td><code>AVERAGE</code> で<strong>平均が出てしまう</strong></td>
+<td><code>mean()</code> で<strong>平均が出てしまう</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">🔴 ここは道具のちがいではありません</p>
+<p><strong>「満足度の平均」を止めてくれる道具は、どちらにもありません。</strong>
+止めるのは、<strong>設問を設計した人</strong>です（<a href="../week03-datatypes/">第3回 資料</a>）。</p>
+</div>
+<p><strong>ちがうのは気づき方です。</strong>Excelは、数値の列に文字が1つ混ざっても表はそのまま出ます。
+pandasは <code>dtypes</code> を見れば「この列は文字だ」と分かります。第6回で最初に <code>dtypes</code> を出したのは、そのためです。</p>
+<hr />
+<h2 id="w04">第4回 代表値とばらつき<a class="headerlink" href="#w04" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>Excel</th>
+<th>ノートブック</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平均</td>
+<td><code>AVERAGE</code></td>
+<td><code>mean()</code></td>
+</tr>
+<tr>
+<td>中央値</td>
+<td><code>MEDIAN</code></td>
+<td><code>median()</code></td>
+</tr>
+<tr>
+<td>最頻値</td>
+<td><code>MODE.SNGL</code></td>
+<td><code>mode()</code></td>
+</tr>
+<tr>
+<td>標準偏差（標本）</td>
+<td><strong><code>STDEV.S</code></strong></td>
+<td><strong><code>std()</code></strong> ← pandasの既定</td>
+</tr>
+<tr>
+<td>標準偏差（母集団）</td>
+<td><code>STDEV.P</code></td>
+<td><code>std(ddof=0)</code></td>
+</tr>
+<tr>
+<td>まとめて全部</td>
+<td>分析ツール → 基本統計量</td>
+<td><code>describe()</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">🔴 標準偏差は2種類あります</p>
+<p><code>[1, 2, 2, 3, 4]</code> で確かめた値（pandas 2.3.3 を実行）：</p>
+<ul>
+<li><code>STDEV.S</code> ＝ <code>std()</code> ＝ <strong>1.140175</strong>（標本。<strong>どちらも既定はこちら</strong>）</li>
+<li><code>STDEV.P</code> ＝ <code>std(ddof=0)</code> ＝ <strong>1.019804</strong>（母集団）</li>
+</ul>
+<p><strong>ただし <code>numpy</code> の <code>np.std()</code> は既定が母集団のほう（1.019804）です。</strong>
+同じ「標準偏差」でも、どれを使ったかで数字が変わります。<strong>どちらを使ったかを書いてください。</strong></p>
+</div>
+<p><strong>最頻値も既定がちがいます。</strong>同率が2つあるとき（<code>[1,1,2,2,3]</code>）、
+<code>MODE.SNGL</code> は<strong>1つだけ</strong>返し、pandasの <code>mode()</code> は <strong><code>[1, 2]</code> と両方</strong>返します。</p>
+<hr />
+<h2 id="w05">第5回 調査の実施・回収記録<a class="headerlink" href="#w05" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>Excel</th>
+<th>ノートブック</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回収件数</td>
+<td><code>COUNTA</code>（空欄を除いて数える）</td>
+<td><code>len(mydf)</code>／<code>notna().sum()</code></td>
+</tr>
+<tr>
+<td>重複した回答を外す</td>
+<td>データ → <strong>重複の削除</strong></td>
+<td><code>drop_duplicates()</code></td>
+</tr>
+<tr>
+<td>日付で並べる</td>
+<td>並べ替え</td>
+<td><code>sort_values("タイムスタンプ")</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">🔴 Excelの「重複の削除」は、元の表から消します</p>
+<p><strong>消えた行は戻りません</strong>（取り消すしかありません）。
+<code>drop_duplicates()</code> は<strong>新しい表を返す</strong>ので、元の <code>mydf</code> はそのまま残ります。</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">実際にあったこと（国際会議の託児の運営から）</p>
+<p>申込の一覧を、<strong>登録システムが出力するCSVとは別に、手で作って</strong>いました。
+その一覧で、<strong>あるお子さんの姓が、別の家族の姓になっていました。</strong>手で打ち直した跡です。</p>
+<p>問題は、打ちまちがいそのものではありません。
+<strong>その名前が、日別の部屋割り・食事の数・配置の表に、何度も書き写されていた</strong>ことです。
+1つの資料の中だけで<strong>7か所</strong>。<strong>1か所直しても、残りは直りません。</strong></p>
+<p>登録のほうを直しても、手で作った一覧には<strong>何も起きません。</strong>
+結局、<strong>全部を手で直して回る</strong>ことになります。そして、直し忘れた1か所が当日に残ります。</p>
+<p>🔴 <strong>残った1か所は、読む人には見分けがつきません。</strong>
+その表を見た人は、<strong>まちがいだと気づかないまま、そのとおりに動きます。</strong>
+今回の行には持病が書いてありました。<strong>その子に起きうることが、別人の名前で並んでいた</strong>わけです。
+薬や食事やアレルギーの話であれば、そのまま事故になります。</p>
+<p><strong>いちばん効いてくるのは、火事や地震が起きたときです。</strong>
+避難したあと、<strong>その子が誰で、どの連絡先の家の子なのか</strong>を、名前でたどることになります。
+名前が別人のものになっていれば、<strong>たどれません。</strong>
+親に「お子さんは無事です」と伝えることが、<strong>できなくなります。</strong></p>
+<p>名前は、ただの文字ではありません。<strong>子どもと親をつなぐ、鍵</strong>です。
+手で打ち直すというのは、<strong>その鍵を、毎回作り直している</strong>ということです。</p>
+<p>直したのは、一覧の作り方のほうです。<strong>CSVから出し直す。</strong>
+出し直せば、<strong>直すのは登録の1か所だけ</strong>で、表は全部そろいます。</p>
+<p>そこから出てきた問い方が、これです ――
+<strong>「その一覧は、システムから出力されますか。手で作りますか。」</strong></p>
+</div>
+<p><strong>これを数字で見たのが、第6回の資料の D です。</strong>
+設問が1つ増えたときの操作は、<strong>Excel 34回／ノートブック 0回</strong>でした
+（<a href="../week06-excel/">同じ課題をExcelでやると</a>）。
+あちらは「列が増えたとき」、ここでは「1件直したとき」。
+<strong>どちらも、手で作った表には変更が伝わらない</strong>という、同じ形です。</p>
+<div class="admonition quote">
+<p class="admonition-title">数字を手で打ち直さない</p>
+<p><strong>これはExcelかノートブックかの話ではありません。</strong>
+CSVを開いて数字を手で直した時点で、それは<strong>集めたデータではなく、打ち直した人の記憶</strong>になります。</p>
+<p>直すなら、<strong>元データは残したまま、直す手順のほうを残す。</strong>
+（第6回でやった <code>=IF(...=-999,"")</code> も <code>replace(-999, pd.NA)</code> も、やっていることはこれです）</p>
+</div>
+<hr />
+<h2 id="w07">第7回 クロス集計<a class="headerlink" href="#w07" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>Excel</th>
+<th>ノートブック</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>クロス集計表（分割表）</td>
+<td><strong>ピボットテーブル</strong>／<code>COUNTIFS</code></td>
+<td><code>pd.crosstab(A, B)</code></td>
+</tr>
+<tr>
+<td>行の%</td>
+<td>値の表示方法 → <strong>行集計に対する比率</strong></td>
+<td><code>normalize="index"</code></td>
+</tr>
+<tr>
+<td>列の%</td>
+<td>値の表示方法 → <strong>列集計に対する比率</strong></td>
+<td><code>normalize="columns"</code></td>
+</tr>
+<tr>
+<td>全体の%</td>
+<td>総計に対する比率</td>
+<td><code>normalize="all"</code></td>
+</tr>
+<tr>
+<td>層別（3つめの項目で分ける）</td>
+<td>フィルターに3つめのフィールドを置く</td>
+<td><code>groupby("層")</code> して同じ表を作る</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mac版では、右クリックのメニューに全部が出ないことがあります。</strong>そのときは「その他のオプション」から選びます。</p>
+<div class="admonition warning">
+<p class="admonition-title">🔴 どちらで割ったかを書く</p>
+<p>「行の%」と「列の%」は、<strong>同じ表から出る、別の話</strong>です。
+Excelでもノートブックでも、<strong>選んだのは人間</strong>です。だから<strong>どちらで割ったかを書く</strong>。
+書いていない%は、読む人が確かめられません。</p>
+</div>
+<p><strong>ピボットテーブルを使わない理由は、「できないから」ではありません。</strong>
+マウスで作った表は、<strong>記録しておかないと、あとからどう作ったか言えない</strong>からです
+（<a href="../process/">過程が残る道具を使う</a>／<a href="../week06-excel/#macro">マクロで記録すれば残せる</a>）。</p>
+<hr />
+<h2 id="689">第6回・第8回・第9回<a class="headerlink" href="#689" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>第6回</strong>（読み込み・整形・記述統計）→ <strong><a href="../week06-excel/">同じ課題をExcelでやると、どこで手間が増えるのか</a></strong>
+  （5つの課題を<strong>実際に全部Excelでやって、操作回数を数えた</strong>資料です）</li>
+<li><strong>第8回</strong>（並べ替え・ランキング）→ <strong><a href="../week08-excel/">同じ概念を、Excelではどう扱っているか</a></strong>
+  （<code>SORT</code>・<code>RANK.EQ</code>・<code>COUNTIFS</code>。<strong>同順位の既定値がpandasと逆</strong>です）</li>
+<li><strong>第9回</strong>（グラフ・散布図、12/3・12/4）→ <strong>準備中</strong></li>
+</ul>
+<hr />
+<h2 id="_1">出どころ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Microsoft公式：<a href="https://support.microsoft.com/ja-jp/excel/show-different-calculations-in-pivottable-value-fields">ピボットテーブルの値フィールドに別の計算を表示する</a></li>
+<li>pandasの既定値（標準偏差・最頻値）は、この資料を書くときに実行して確かめました（pandas 2.3.3）</li>
+<li>第6回・第8回の資料に書いた出どころは、それぞれのページにあります</li>
+</ul>
+<hr />
+<p><strong>関連</strong>：<a href="../tools/">この授業で使う道具</a> ／ <a href="../process/">過程が残る道具を使う</a> ／ <a href="../assignments/">課題一覧</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  ページトップへ戻る
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="フッター" >
+        
+          
+          <a href="../week08-excel/" class="md-footer__link md-footer__link--prev" aria-label="前: 第8回 資料 同じ概念をExcelではどう扱っているか">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                前
+              </span>
+              <div class="md-ellipsis">
+                第8回 資料 同じ概念をExcelではどう扱っているか
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../week09/" class="md-footer__link md-footer__link--next" aria-label="次: 第9回 データの表現：グラフ・散布図">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                次
+              </span>
+              <div class="md-ellipsis">
+                第9回 データの表現：グラフ・散布図
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 小野原 彩香 — 北星学園大学 情報活用
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../js/mathjax.js"></script>
+      
+        <script src="../js/tex-mml-svg.js"></script>
+      
+    
+  </body>
+</html>
