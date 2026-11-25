@@ -6,6 +6,7 @@
 !!! info "今日のリンク"
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/08_sorting_ranking.ipynb)
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates.csv)
+    - [📊 同じ概念をExcelではどう扱うか（補習・成績には入りません）](https://aonoa68.github.io/joho-katsuyo/week08-excel/)
     - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=993427) … **成績には入りません**
     - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=993428) … **成績には入りません**
     - [📝 課題を提出する（木3・グC）](https://moodle.hokusei.ac.jp/mod/assign/view.php?id=989702)
@@ -39,6 +40,13 @@
     聞きたいことがあれば、**始まる前に**聞いてください。
     （**演習中は、いつもどおり相談して構いません。**制限があるのは、この時間だけです。）
 
+
+!!! tip "補習：同じことをExcelでやると（任意・成績には入りません）"
+    **[同じ概念を、Excelではどう扱っているか](week08-excel.md)**
+
+    今日の「並べ替え」「順位」は、Excelにも同じものがあります（`SORT`・`RANK.EQ`・`COUNTIFS`）。
+    **ちがうのは名前と既定値だけです。**両方を突き合わせると、どちらの意味も分かります。
+    **読まなくても課題8は出せます。**
 
 ## 詰まったときは
 
