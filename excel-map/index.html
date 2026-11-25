@@ -1818,9 +1818,12 @@ pandasは <code>dtypes</code> を見れば「この列は文字だ」と分か�
 <code>drop_duplicates()</code> は<strong>新しい表を返す</strong>ので、元の <code>mydf</code> はそのまま残ります。</p>
 </div>
 <div class="admonition quote">
-<p class="admonition-title">実際にあったこと（国際会議の託児の運営から）</p>
-<p>申込の一覧を、<strong>登録システムが出力するCSVとは別に、手で作って</strong>いました。
+<p class="admonition-title">実際にあったこと（国際会議の託児で、委託先の事業者に起きたこと）</p>
+<p>託児を引き受けた<strong>事業者のほう</strong>が、申込の一覧を、
+<strong>登録システムが出力するCSVとは別に、手で作っていました。</strong>
 その一覧で、<strong>あるお子さんの姓が、別の家族の姓になっていました。</strong>手で打ち直した跡です。</p>
+<p>🔴 <strong>その会社は、予約・管理のシステムを売りにしている会社です。</strong>
+「システムでやっています」と言っている会社の内側で、<strong>いちばん大事な一覧が手で作られていました。</strong></p>
 <p>問題は、打ちまちがいそのものではありません。
 <strong>その名前が、日別の部屋割り・食事の数・配置の表に、何度も書き写されていた</strong>ことです。
 1つの資料の中だけで<strong>7か所</strong>。<strong>1か所直しても、残りは直りません。</strong></p>
@@ -1836,10 +1839,11 @@ pandasは <code>dtypes</code> を見れば「この列は文字だ」と分か�
 親に「お子さんは無事です」と伝えることが、<strong>できなくなります。</strong></p>
 <p>名前は、ただの文字ではありません。<strong>子どもと親をつなぐ、鍵</strong>です。
 手で打ち直すというのは、<strong>その鍵を、毎回作り直している</strong>ということです。</p>
-<p>直したのは、一覧の作り方のほうです。<strong>CSVから出し直す。</strong>
-出し直せば、<strong>直すのは登録の1か所だけ</strong>で、表は全部そろいます。</p>
-<p>そこから出てきた問い方が、これです ――
-<strong>「その一覧は、システムから出力されますか。手で作りますか。」</strong></p>
+<p><strong>発注する側が確かめるべきだったのは、ここでした。</strong>
+「システムがありますか」では足りません。<strong>あると答えるからです。</strong>
+聞くのは<strong>継ぎ目</strong>です ――
+<strong>「その一覧は、システムから出力されますか。手で作りますか。」</strong>
+<strong>「登録の内容を1件直したら、どこまで自動で直りますか。」</strong></p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">もう一つ、今日ここで起きたこと（2026-11-25）</p>
