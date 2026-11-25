@@ -87,6 +87,7 @@ nav:
       - 第8回 データの加工：並べ替え・ランキング: week08.md
       - 第8回 資料 Colabで詰まるところ一覧: colab-traps.md
       - 第8回 資料 同じ概念をExcelではどう扱っているか: week08-excel.md
+      - 参考 各回の概念はExcelではどう扱われているか: excel-map.md
       - 第9回 データの表現：グラフ・散布図: week09.md
       - 第10回 成果物ページの構成（HTML）: week10.md
       - 第11回 ページの仕上げと公開: week11.md
