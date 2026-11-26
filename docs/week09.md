@@ -6,6 +6,7 @@
 !!! info "今日のリンク"
     - [📓 ノートブックを開く（Colab）](https://colab.research.google.com/github/aonoa68/joho-katsuyo/blob/main/colab/09_visualization.ipynb)
     - [📊 練習用データの説明](https://aonoa68.github.io/joho-katsuyo/data/primates.csv)
+    - [📊 同じ概念をExcelではどう扱うか（補習・成績には入りません）](https://aonoa68.github.io/joho-katsuyo/week09-excel/)
     - [🎯 ドリル](graph-drill.html)
     - [⏱ 冒頭テスト（木3・グC）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990511) … **成績には入りません**
     - [⏱ 冒頭テスト（金3・社B）](https://moodle.hokusei.ac.jp/mod/quiz/view.php?id=990516) … **成績には入りません**
@@ -46,6 +47,17 @@
     聞きたいことがあれば、**始まる前に**聞いてください。
     （**演習中は、いつもどおり相談して構いません。**制限があるのは、この時間だけです。）
 
+
+!!! tip "補習：同じことをExcelでやると（任意・成績には入りません）"
+    **[同じ概念を、Excelではどう扱っているか](week09-excel.md)**
+
+    今日の「グラフ」「散布図」は、Excelにも同じものがあります。
+    **折れ線と散布図は別のグラフ**で、**ヒストグラムの区間の数も既定がちがいます**（3本と10本）。
+    **読まなくても課題9は出せます。**
+
+## 詰まったときは
+
+**[📋 Colabで詰まるところ一覧](colab-traps.md)** を開いておいてください。
 
 ## 課題
 
